@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_marginTop="180dp"
+        android:id="@+id/bhk"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="BHK"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:background="@drawable/round_button"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/location"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:background="@drawable/round_button"
+        android:padding="15dp"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/maxPrice"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Max Price"
+        android:textSize="20dp"
+        android:padding="15dp"
+        android:background="@drawable/round_button"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"/>
+
+    <Button
+        android:id="@+id/minArea"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Min Area"
+        android:background="@drawable/round_button"
+        android:padding="15dp"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"/>
+
+</LinearLayout>
