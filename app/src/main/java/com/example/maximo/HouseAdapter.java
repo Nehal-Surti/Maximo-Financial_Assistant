@@ -8,24 +8,34 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.MyViewHolder>  {
 
-    private String[] mDataset;
+    private ArrayList<House> houses;
     private Context context;
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView textView;
+        public TextView areaView;
+        public TextView flatView;
+        public TextView priceView;
+        public TextView carpetView;
+        public TextView bathView;
         public MyViewHolder(View v) {
             super(v);
-            textView = v.findViewById(R.id.text1);
+            areaView = v.findViewById(R.id.area_name);
+            flatView = v.findViewById(R.id.flat_name);
+            priceView = v.findViewById(R.id.price);
+            carpetView = v.findViewById(R.id.carpet);
+            bathView = v.findViewById(R.id.bath);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public HouseAdapter(Context context,String[] myDataset) {
-        mDataset = myDataset;
+    public HouseAdapter(Context context,ArrayList<House> houses) {
+        this.houses = houses;
         context = context;
     }
 
@@ -41,13 +51,17 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.MyViewHolder
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(mDataset[position]);
+        holder.areaView.setText(houses.get(position).getAreaName());
+        holder.flatView.setText(houses.get(position).getFlatName());
+        holder.priceView.setText(houses.get(position).getPrice());
+        holder.carpetView.setText(houses.get(position).getCarpet());
+        holder.bathView.setText(houses.get(position).getBathrooms());
 
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return houses.size();
     }
 }

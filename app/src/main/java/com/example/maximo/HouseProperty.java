@@ -1,10 +1,13 @@
 package com.example.maximo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class HouseProperty extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -26,8 +29,11 @@ public class HouseProperty extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+//        Intent instent = getIntent();
+//        Bundle args = instent.getBundleExtra("bundle");
+//        ArrayList<House> houses = (ArrayList<House>) args.get("houses");
         // specify an adapter (see also next example)
-        mAdapter = new HouseAdapter(this,myDataset);
+        mAdapter = new HouseAdapter(this,HouseFilter.houses);
         recyclerView.setAdapter(mAdapter);
     }
 }
