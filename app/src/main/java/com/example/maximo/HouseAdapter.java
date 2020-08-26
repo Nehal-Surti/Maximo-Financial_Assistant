@@ -1,9 +1,12 @@
 package com.example.maximo;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +26,8 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.MyViewHolder
         public TextView priceView;
         public TextView carpetView;
         public TextView bathView;
+        public Button clickDetails;
+
         public MyViewHolder(View v) {
             super(v);
             areaView = v.findViewById(R.id.area_name);
@@ -30,6 +35,7 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.MyViewHolder
             priceView = v.findViewById(R.id.price);
             carpetView = v.findViewById(R.id.carpet);
             bathView = v.findViewById(R.id.bath);
+            clickDetails = v.findViewById(R.id.clickDetails);
         }
     }
 
@@ -48,7 +54,7 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.MyViewHolder
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.areaView.setText(houses.get(position).getAreaName());
@@ -56,7 +62,20 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.MyViewHolder
         holder.priceView.setText(houses.get(position).getPrice());
         holder.carpetView.setText(houses.get(position).getCarpet());
         holder.bathView.setText(houses.get(position).getBathrooms());
-
+        holder.clickDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("Area",houses.get(position).getAreaName());
+                bundle.putString("Flat",houses.get(position).getFlatName());
+                bundle.putString("Price",houses.get(position).getPrice());
+                bundle.putString("Carpet",houses.get(position).getCarpet());
+                bundle.putString("Description",houses.get(position).getDescription());
+                Intent intent = new Intent(context,HousePrediction.class);
+                intent.putExtra("house",bundle);
+                context.startActivity(intent);
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)

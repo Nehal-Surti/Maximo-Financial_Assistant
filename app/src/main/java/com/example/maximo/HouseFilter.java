@@ -52,7 +52,8 @@ public class HouseFilter extends AppCompatActivity{
     JSONArray price_name;
     JSONArray carpet_name;
     JSONArray bath_name;
-    String param_location = "";
+    JSONArray description;
+    public static String param_location = "";
     int param_price = 0;
     final Context context = this;
     @Override
@@ -131,56 +132,65 @@ public class HouseFilter extends AppCompatActivity{
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!param_location.isEmpty()) {
+                    RequestQueue queue = Volley.newRequestQueue(context);
+                    String url = "http://192.168.0.5:8000/House_Property/" + param_BHK + "/" + param_location + "/" + param_price + "/";
+                    Toast.makeText(context, url, Toast.LENGTH_LONG).show();
+                    JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    Log.d("ABC", response.toString());
+                                    if (response.length() != 0) {
+                                        try {
+                                            area_name = response.getJSONArray("Areaname");
+                                            flat_name = response.getJSONArray("Flatname");
+                                            price_name = response.getJSONArray("Price");
+                                            carpet_name = response.getJSONArray("Carpet");
+                                            bath_name = response.getJSONArray("Bathrooms");
+                                            description = response.getJSONArray("Description");
+                                            createHouseList();
+                                        } catch (JSONException e) {
 
-                RequestQueue queue = Volley.newRequestQueue(context);
-                String url = "http://192.168.0.4:8000/House_Property/"+ param_BHK + "/" + param_location + "/" + param_price + "/";
-                Toast.makeText(context,url,Toast.LENGTH_LONG).show();
-                JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url,null,
-                        new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                Log.d("ABC",response.toString());
-                                if (response.length() != 0) {
-                                    try {
-                                        area_name = response.getJSONArray("Areaname");
-                                        flat_name = response.getJSONArray("Flatname");
-                                        price_name = response.getJSONArray("Price");
-                                        carpet_name = response.getJSONArray("Carpet");
-                                        bath_name = response.getJSONArray("Bathrooms");
-                                        createHouseList();
-                                    } catch (JSONException e) {
+                                            Log.d("ER", e.getMessage());
+                                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+                                        }
+                                    } else {
 
-                                        Log.d("ER",e.getMessage());
-                                        Toast.makeText(context,e.getMessage(),Toast.LENGTH_LONG).show();
+                                        Toast.makeText(context, "No houses found. Please change your filters", Toast.LENGTH_LONG).show();
                                     }
+                                    // Display the first 500 characters of the response string.
                                 }
-                                else{
-
-                                    Toast.makeText(context,"No houses found. Please change your filters",Toast.LENGTH_LONG).show();
-                                }
-                                // Display the first 500 characters of the response string.
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context,error.getMessage(),Toast.LENGTH_LONG).show();
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    queue.add(jsonRequest);
+                }
+                else
+                    {
+                        Toast.makeText(context, "Select Location", Toast.LENGTH_LONG).show();
                     }
-                });
-                queue.add(jsonRequest);
-                Toast.makeText(context,"aaaaa",Toast.LENGTH_LONG).show();
             }
         });
     }
 
     public void createHouseList() throws JSONException {
-      for(int i =0 ; i< price_name.length();i++)
-      {
-          houses.add(new House(area_name.getString(i),flat_name.getString(i),price_name.getString(i),carpet_name.getString(i),bath_name.getString(i)));
-      }
-      Set<House> s = new LinkedHashSet<House>(houses);
-      houses = new ArrayList<House>(s);
-//      Toast.makeText(context,"No houses found. Please change your filters",Toast.LENGTH_LONG).show();
-      Intent intent = new Intent(this,HouseProperty.class);
-      startActivity(intent);
+        if(price_name.length()==0)
+        {
+            Toast.makeText(context,"No houses found. Please change your filters",Toast.LENGTH_LONG).show();
+        }
+        else{
+            for(int i =0 ; i< price_name.length();i++)
+            {
+                houses.add(new House(area_name.getString(i),flat_name.getString(i),price_name.getString(i),carpet_name.getString(i),bath_name.getString(i),description.getString(i)));
+            }
+            Set<House> s = new LinkedHashSet<House>(houses);
+            houses = new ArrayList<House>(s);
+            Intent intent = new Intent(this,HouseProperty.class);
+            startActivity(intent);
+        }
     }
 }
