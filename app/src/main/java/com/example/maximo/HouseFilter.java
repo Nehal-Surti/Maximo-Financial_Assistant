@@ -42,7 +42,7 @@ public class HouseFilter extends AppCompatActivity{
     public static ArrayList<House> houses = new ArrayList<House>();
     private static final String[] BHKS = {"1 BHK", "2 BHK", "3 BHK"};
     private static final String[] locations = {"Churchgate", "Dadar", "Chembur"};
-    private static final String[] Prices = {"5 Lacs", "10 Lacs", "15 Lacs","20 Lacs","25 Lacs","30 Lacs","35 Lacs","40 Lacs"};
+    private static final String[] Prices = {"40 Lacs", "50 Lacs", "60 Lacs","70 Lacs","80 Lacs","90 Lacs","Above 90 Lacs",};
     int checkedBHK = 0;
     int checkedLocation = 0;
     int checkedPrice = 0;
@@ -118,11 +118,17 @@ public class HouseFilter extends AppCompatActivity{
                                 checkedPrice = which;
                                 MaxPrice.setText(Prices[which]);
                                 String temp = Prices[which];
-                                String[] temps = temp.split(" ");
-                                temp = temps[0];
-                                String s = "00000";
-                                temp = temp + s;
-                                param_price = Integer.parseInt(temp);
+                                if (temp.contains("Above"))
+                                {
+                                    param_price = 0;
+                                }
+                                else{
+                                    String[] temps = temp.split(" ");
+                                    temp = temps[0];
+                                    String s = "00000";
+                                    temp = temp + s;
+                                    param_price = Integer.parseInt(temp);
+                                }
                                 dialog.dismiss();
                             }
                         }).create().show();

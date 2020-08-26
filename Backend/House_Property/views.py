@@ -1,3 +1,5 @@
+import csv
+
 from django.http import HttpResponse
 import json
 import requests
@@ -10,12 +12,14 @@ from datetime import datetime
 warnings.filterwarnings("ignore")
 import pandas as pd
 import statsmodels.api as sm
+import os
+workpath = os.path.dirname(os.path.abspath(os.path.dirname(__package__)))
 
-def prediction(request,location,time,sqft):
-    year = time.split("-")[0]
+def prediction(request,location,time_t,sqft,today):
+    year = time_t.split("-")[0]
     cols = ["Inflation", "Dadar", "Chembur", "Churchgate"]
     cols.remove(location)
-    df = pd.read_csv('templates/House.csv')
+    df = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\House.csv'))
     df = df.drop(columns=cols)
     df = df.dropna()
     df['Date'] = pd.to_datetime(df['Date'])
@@ -25,32 +29,43 @@ def prediction(request,location,time,sqft):
                                     enforce_invertibility=False)
     results = mod.fit()
     pred = results.get_prediction(start=pd.to_datetime('2020-01-01'), end=pd.to_datetime('2050-06-01'), dynamic=False)
-    forcast = pd.to_datetime(time)
+    forcast = pd.to_datetime(time_t)
     forecast = pred.predicted_mean[forcast]
 
-    ef = pd.read_csv('templates/House.csv')
+    # ef = pd.read_csv('../templates/dataset/House.csv')
+    ef = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\House.csv'))
     ef = ef.dropna()
     X = ef.Date
     Y = []
-    inflation = pd.read_csv('templates/Inflation.csv')
+    # inflation = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\Inflation.csv'))
     for i in X:
         b_date = datetime.strptime(i, '%Y-%m-%d')
         temp = (datetime.today() - b_date).days / 365
         Y.append(round(temp, 1))
     ef['Years'] = Y
+    date = datetime.strptime(time_t, '%Y-%m-%d')
+    temp = (datetime.today() - date).days / 365
+    investYear = round(temp, 1)
     X1 = ef.drop(columns=['Churchgate', 'Dadar', 'Chembur', 'Date'])
     Y1 = ef[location]
-    inf = inflation[inflation['Year'] == year]['inflation forecast'].to_numpy()[0]
-    polynomial_features = PolynomialFeatures(degree=3)
+    c = open(os.path.join(workpath, 'Backend\\templates\\dataset\\Inflation.csv'))
+    reader = csv.reader(c)
+    for row in reader:
+        if row[0] == year:
+            inf = row[1]
+        if row[0] == "2020":
+            inflation = row[1]
+    polynomial_features = PolynomialFeatures(degree=2)
     x_poly = polynomial_features.fit_transform(X1)
-    x_poly_test = polynomial_features.fit_transform(np.array([inf, 3.0]).reshape(1, -1))
+    x_poly_test = polynomial_features.fit_transform(np.array([inf, investYear]).reshape(1, -1))
     model = LinearRegression()
     model.fit(x_poly, Y1)
     poly_pred = model.predict(x_poly_test)
-
-    final = round(0.4 * forecast + 0.6 * poly_pred[0],4)
+    future = pow(1+float(inflation),investYear)
+    future = today*future
+    final = round(0.4 * forecast + 0.3 * poly_pred[0] + 0.3 * future,4)
     data = dict()
-    data['Answer'] = str(final*sqft)
+    data['Answer'] = str(round(final*sqft,2))
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
     return result
 

@@ -42,7 +42,7 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.MyViewHolder
     // Provide a suitable constructor (depends on the kind of dataset)
     public HouseAdapter(Context context,ArrayList<House> houses) {
         this.houses = houses;
-        context = context;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)

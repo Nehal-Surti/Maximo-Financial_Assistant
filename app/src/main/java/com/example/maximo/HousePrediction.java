@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,8 +40,11 @@ public class HousePrediction extends AppCompatActivity {
     TextView price_each;
     String price;
     String carpet;
-    JSONArray answer;
+    String answer;
     TextView valuation;
+    Bundle bundle;
+    TextView approx;
+    LinearLayout prediction;
     String location = HouseFilter.param_location;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,18 +52,19 @@ public class HousePrediction extends AppCompatActivity {
         setContentView(R.layout.house_pred);
         year = findViewById(R.id.yearsInput);
         predict = findViewById(R.id.predict);
+        prediction = findViewById(R.id.prediction);
         description = findViewById(R.id.description);
         area = findViewById(R.id.area);
         flat = findViewById(R.id.flat);
         valuation = findViewById(R.id.valuation);
         price_each = findViewById(R.id.price_each);
+        approx = findViewById(R.id.approx);
         Intent intent = getIntent();
-        Bundle bundle = intent.getBundleExtra("house");
+        bundle = intent.getBundleExtra("house");
         description.setText(bundle.getString("Description"));
         area.setText(bundle.getString("Area"));
         flat.setText(bundle.getString("Flat"));
         price_each.setText(bundle.getString("Price"));
-        carpet = bundle.getString("Carpet");
         final FoldingCell fc = (FoldingCell) findViewById(R.id.folding_cell);
         fc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,18 +72,21 @@ public class HousePrediction extends AppCompatActivity {
                 fc.toggle(false);
             }
         });
-
-        years = Double.parseDouble(year.getText().toString());
-
         predict.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                years = Double.parseDouble(year.getText().toString());
                 if(years==0.0)
                 {
                     Toast.makeText(context,"Enter years of investment",Toast.LENGTH_LONG).show();
                 }
                 else
                     {
+                        price = bundle.getString("Price");
+                        carpet = bundle.getString("Carpet");
+                        String[] prices = price.split(" ");
+                        price = prices[3].split("/")[0];
+                        price = price.replace(",","");
                         String[] carpets = carpet.split(" ");
                         carpet = carpets[0].replace(",","");
                         int area = Integer.parseInt(carpet);
@@ -86,10 +94,10 @@ public class HousePrediction extends AppCompatActivity {
                         Calendar calendar = Calendar.getInstance();
                         int month = calendar.get(Calendar.MONTH);
                         int Year = calendar.get(Calendar.YEAR);
-                        Year = Year + Integer.parseInt(years.toString());
+                        Year = Year + Integer.parseInt(year.getText().toString());
                         String time = String.valueOf(Year) + "-0" + String.valueOf(month) + "-01";
                         RequestQueue queue = Volley.newRequestQueue(context);
-                        String url = "http://192.168.0.5:8000/House_Property/"+ location + "/" + time + "/" + area + "/";
+                        String url = "http://192.168.0.5:8000/House_Property/"+ location + "/" + time + "/" + area + "/" + Integer.parseInt(price) + "/";
                         Toast.makeText(context,url,Toast.LENGTH_LONG).show();
                         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url,null,
                                 new Response.Listener<JSONObject>() {
@@ -98,9 +106,21 @@ public class HousePrediction extends AppCompatActivity {
                                         Log.d("ABC",response.toString());
                                         if (response.length() != 0) {
                                             try {
-                                                answer = response.getJSONArray("Answer");
-                                                String value = answer.getString(0);
-                                                valuation.setText("Rs. "+value+"/-");
+                                                answer = response.getString("Answer");
+                                                valuation.setText("Rs. "+answer+"/-");
+                                                if(answer.length() > 7)
+                                                {
+                                                    int temp = Integer.parseInt(answer);
+                                                    temp = temp/10000000;
+                                                    approx.setText("Approximately " + String.valueOf(temp) + " Crores");
+                                                    prediction.setVisibility(View.VISIBLE);
+                                                }
+                                                else{
+                                                    int temp = Integer.parseInt(answer);
+                                                    temp = temp/100000;
+                                                    approx.setText("Approximately " + String.valueOf(temp) + " Crores");
+                                                    prediction.setVisibility(View.VISIBLE);
+                                                }
                                             } catch (JSONException e) {
                                                 Log.d("ER",e.getMessage());
                                                 Toast.makeText(context,e.getMessage(),Toast.LENGTH_LONG).show();
