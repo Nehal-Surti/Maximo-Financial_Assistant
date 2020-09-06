@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="15dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/home_loan_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Homeloan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About Home Loans:"
+        android:textSize="24dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/home_loan_list"
+        android:textStyle="bold"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hldet"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home loans help you realise your dream of owning a house without breaking your savings and investments or impacting your other important financial goals such as children’s higher education and retirement. It comes with a host of benefits and features, including high-value financing of up to Rs. 10 crore, low interest rates, flexible repayment tenure of up to 30 years, annual tax benefits, PMAY subsidy of up to Rs. 2.67 lakh, balance transfer facility and top-up loan facility. Housing loans can also be availed by those who need funds to construct a house or expand, repair and renovate an existing property."
+        android:textSize="20dp"
+        android:layout_below="@id/Homeloan"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tax"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tax Benefits:"
+        android:textSize="24dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/hldet"
+        android:textStyle="bold"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The Government of India offers tax benefits on home loans under the Income Tax Act of 1961. Home loan borrower can get the benefit of tax deduction on principal repayment under section 80C, tax deduction on interest under section 24, and additional home loan interest tax benefit for first-time homebuyers under section 80ee."
+        android:textSize="20dp"
+        android:layout_below="@id/tax"/>
+
+
+</RelativeLayout>
+</ScrollView>

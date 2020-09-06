@@ -10,27 +10,37 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/loan_layer"
         />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home Loans"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp"
+        app:fontFamily="sans-serif-condensed-medium" />
 
     <TextView
         android:layout_gravity="center"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="16dp"
         android:text="Annual Salary"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp" />
+        android:textSize="25dp" />
 
     <EditText
         android:layout_gravity="center"
         android:id="@+id/purity_input"
         android:layout_width="276dp"
-        android:layout_height="41dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:background="@drawable/border_button"
@@ -40,28 +50,104 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="16dp"
         android:text="Age"
         android:layout_gravity="center"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp" />
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/weight_input"
         android:layout_width="276dp"
-        android:layout_height="41dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
        android:layout_gravity="center"
         android:background="@drawable/border_button"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="EMI Obligations"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/emi_input"
+        android:layout_width="276dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_gravity="center"
+        android:background="@drawable/border_button"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Type of Profression"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RadioButton
+            android:id="@+id/salaried"
+            android:layout_height="match_parent"
+            android:layout_width="30dp"
+            android:layout_marginLeft="70dp"
+            android:onClick="onRadioButtonClicked"
+            />
+
+        <TextView
+            android:paddingTop="8dp"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Salaried"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RadioButton
+            android:id="@+id/self_employeed"
+            android:layout_height="match_parent"
+            android:layout_width="30dp"
+            android:layout_marginLeft="70dp"
+            android:onClick="onRadioButtonClicked"
+            />
+
+        <TextView
+            android:paddingTop="12dp"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Self-Employeed"/>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/check_home_loan"
         android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:text="Check Home Loan"
         android:textSize="16dp"

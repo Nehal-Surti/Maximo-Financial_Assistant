@@ -26,7 +26,11 @@
         <activity android:name=".IncomeTaxPart1"/>
         <activity android:name=".IncomeTax"/>
         <activity android:name=".IncomeTaxPart2"/>
+        <activity android:name=".EducationEMICalculator"/>
+        <activity android:name=".Loans_Home"/>
+        <activity android:name=".Education_Loan_Page"/>
         <activity android:name=".IncomeFinal"/>
+        <activity android:name=".EMIScreen"/>
     </application>
 
 </manifest>

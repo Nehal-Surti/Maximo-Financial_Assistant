@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:onClick="getItemCount" >
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/bank_logo"
+                android:layout_width="113dp"
+                android:layout_height="90dp"
+                android:padding="4dp"
+                android:src="@drawable/bank" />
+
+            <TextView
+                android:id="@+id/EduBankName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/bank_logo"
+                android:text="***Bank Name***"
+                android:textSize="20sp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/IndiaInterest"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/EduBankName"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:layout_toRightOf="@id/bank_logo"
+                android:text="India Rate: x % p.a"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:id="@+id/AbroadInterest"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/IndiaInterest"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/bank_logo"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingRight="15dp"
+                android:text="Abroad Rate: x % p.a"
+                android:textSize="18sp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@id/AbroadInterest"
+                android:layout_marginLeft="95dp"
+                android:layout_marginTop="8dp">
+                <Button
+                    android:id="@+id/check_edu_emi"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="6dp"
+                    android:textSize="18dp"
+                    android:background="@color/colorPrimary"
+                    android:text="EMI Calculator"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="5dp"
+                    />
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
