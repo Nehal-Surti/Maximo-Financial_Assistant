@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_height="20dp"
+        android:layout_width="match_parent"
+        android:text="INCOME/LOSS FROM HOUSE PROPERTY"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/hpinfo"
+        android:layout_height="20dp"
+        android:layout_width="match_parent"
+        android:text="Click here for more information"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="14dp" />
+
+    <RadioGroup
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_height="40dp"
+        android:layout_width="match_parent">
+        <RadioButton
+            android:id="@+id/rent"
+            android:layout_height="match_parent"
+            android:layout_width="30dp"
+            android:layout_marginLeft="70dp"
+            android:onClick="onRadioButtonClicked"
+            />
+        <TextView
+            android:paddingTop="12dp"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Rented"/>
+        <RadioButton
+            android:id="@+id/self"
+            android:layout_height="match_parent"
+            android:layout_width="30dp"
+            android:layout_marginLeft="40dp"
+            android:onClick="onRadioButtonClicked"
+            />
+        <TextView
+            android:paddingTop="12dp"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Self-Occupied"
+            />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:text="RENT RECIEVED PER MONTH"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/rent_received"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:background="@drawable/border_button" />
+
+        <TextView
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:text="NO. OF MONTHS THE HOUSE WAS VACANT"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:paddingLeft="10dp"
+            android:id="@+id/vacant"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:background="@drawable/border_button" />
+
+        <TextView
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:text="MUNICIPAL/PROPERTY TAX PER MONTH"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:id="@+id/property_tax"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:background="@drawable/border_button"/>
+
+        <TextView
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:text="INTEREST ON HOME LOAN PER MONTH"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:id="@+id/interest_home_loan"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:background="@drawable/border_button"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/part1next"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:text="NEXT"
+        android:textSize="20dp"
+        android:background="@drawable/round_button"/>
+
+
+</LinearLayout>
+</ScrollView>

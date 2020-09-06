@@ -34,11 +34,14 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import dmax.dialog.SpotsDialog;
+
 public class HouseFilter extends AppCompatActivity{
     Button Location;
     Button BHK;
     Button MaxPrice;
     Button Search;
+    SpotsDialog progressDialog ;
     public static ArrayList<House> houses = new ArrayList<House>();
     private static final String[] BHKS = {"1 BHK", "2 BHK", "3 BHK"};
     private static final String[] locations = {"Churchgate", "Dadar", "Chembur"};
@@ -64,6 +67,7 @@ public class HouseFilter extends AppCompatActivity{
         BHK = findViewById(R.id.bhk);
         Search = findViewById(R.id.submit_filters);
         MaxPrice = findViewById(R.id.maxPrice);
+        progressDialog = new SpotsDialog(context,R.style.Custom);
         ArrayList<House> houses = new ArrayList<House>();
         Location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +143,7 @@ public class HouseFilter extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if (!param_location.isEmpty()) {
+                    progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
                     String url = "http://192.168.0.5:8000/House_Property/" + param_BHK + "/" + param_location + "/" + param_price + "/";
                     Toast.makeText(context, url, Toast.LENGTH_LONG).show();
@@ -157,12 +162,12 @@ public class HouseFilter extends AppCompatActivity{
                                             description = response.getJSONArray("Description");
                                             createHouseList();
                                         } catch (JSONException e) {
-
+                                            progressDialog.dismiss();
                                             Log.d("ER", e.getMessage());
                                             Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
                                         }
                                     } else {
-
+                                        progressDialog.dismiss();
                                         Toast.makeText(context, "No houses found. Please change your filters", Toast.LENGTH_LONG).show();
                                     }
                                     // Display the first 500 characters of the response string.
@@ -170,6 +175,7 @@ public class HouseFilter extends AppCompatActivity{
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            progressDialog.dismiss();
                             Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
@@ -186,15 +192,18 @@ public class HouseFilter extends AppCompatActivity{
     public void createHouseList() throws JSONException {
         if(price_name.length()==0)
         {
+            progressDialog.dismiss();
             Toast.makeText(context,"No houses found. Please change your filters",Toast.LENGTH_LONG).show();
         }
         else{
+            houses.clear();
             for(int i =0 ; i< price_name.length();i++)
             {
                 houses.add(new House(area_name.getString(i),flat_name.getString(i),price_name.getString(i),carpet_name.getString(i),bath_name.getString(i),description.getString(i)));
             }
             Set<House> s = new LinkedHashSet<House>(houses);
             houses = new ArrayList<House>(s);
+            progressDialog.dismiss();
             Intent intent = new Intent(this,HouseProperty.class);
             startActivity(intent);
         }

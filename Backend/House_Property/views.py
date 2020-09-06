@@ -32,12 +32,11 @@ def prediction(request,location,time_t,sqft,today):
     forcast = pd.to_datetime(time_t)
     forecast = pred.predicted_mean[forcast]
 
-    # ef = pd.read_csv('../templates/dataset/House.csv')
+
     ef = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\House.csv'))
     ef = ef.dropna()
     X = ef.Date
     Y = []
-    # inflation = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\Inflation.csv'))
     for i in X:
         b_date = datetime.strptime(i, '%Y-%m-%d')
         temp = (datetime.today() - b_date).days / 365
@@ -65,7 +64,7 @@ def prediction(request,location,time_t,sqft,today):
     future = today*future
     final = round(0.4 * forecast + 0.3 * poly_pred[0] + 0.3 * future,4)
     data = dict()
-    data['Answer'] = str(round(final*sqft,2))
+    data['Answer'] = str(int(final*sqft))
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
     return result
 
@@ -88,12 +87,20 @@ def index(request,bhk,location,price):
     carpet = list()
     baths = list()
     name = list()
-    j = 0
     description = list()
+    count = list()
+    j = 0
+    countRow = 0
     for row in table.findAll('td', attrs={'class': "list_header_bold srpTuple__spacer10"}):
         name.append(row.text)
     for row in table.findAll('table', attrs={'class': "srpTuple__tupleTable"}):
         flatname.append(row.h2.text)
+    for row in table.findAll('div', attrs={'class': "body_med", 'id': "srp_tuple_description"}):
+        # print(row.h2)
+        temp = row.text
+        temp = temp.replace("\n", " ")
+        description.append(temp)
+        # description
     for row in table.findAll('td', attrs={'class': "srpTuple__midGrid title_semiBold srpTuple__spacer16"}):
         if j % 3 == 0:
             if price!=0:
@@ -109,26 +116,31 @@ def index(request,bhk,location,price):
                     x = x + "0"*7
                 if int(x) < price:
                     prices.append(row.text)
-            else:
-                prices.append(row.text)
+                    count.append(countRow)
+            countRow = countRow + 1
         elif j % 3 == 1:
             carpet.append(row.text)
         elif j % 3 == 2:
             baths.append(row.text)
         j = j + 1
-        # pair of 3 for one house
-    for row in table.findAll('div', attrs={'class': "body_med", 'id': "srp_tuple_description"}):
-        # print(row.h2)
-        temp = row.text
-        temp = temp.replace("\n" , " ")
-        description.append(temp)
-        # description
-    if len(prices) > 0:
-        data['Areaname'] = flatname
-        data['Flatname'] = name
+    final_flatname = list()
+    final_carpet = list()
+    final_baths = list()
+    final_name = list()
+    final_description = list()
+    for x in count:
+        final_baths.append(baths[x])
+        final_carpet.append(carpet[x])
+        final_description.append(description[x])
+        final_flatname.append(flatname[x])
+        final_name.append(name[x])
+    if len(final_name) > 0:
+        data['Areaname'] = final_flatname
+        data['Flatname'] = final_name
         data['Price'] = prices
-        data['Bathrooms'] = baths
-        data['Carpet'] = carpet
-        data['Description'] = description
+        data['Bathrooms'] = final_baths
+        data['Carpet'] = final_carpet
+        data['Description'] = final_description
+    print(table)
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
     return result

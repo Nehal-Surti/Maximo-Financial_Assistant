@@ -29,6 +29,8 @@ import org.json.JSONObject;
 import java.util.Calendar;
 import java.util.Date;
 
+import dmax.dialog.SpotsDialog;
+
 public class HousePrediction extends AppCompatActivity {
     Double years = 0.0;
     EditText year;
@@ -45,6 +47,7 @@ public class HousePrediction extends AppCompatActivity {
     Bundle bundle;
     TextView approx;
     LinearLayout prediction;
+    SpotsDialog progressDialog;
     String location = HouseFilter.param_location;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,6 +62,7 @@ public class HousePrediction extends AppCompatActivity {
         valuation = findViewById(R.id.valuation);
         price_each = findViewById(R.id.price_each);
         approx = findViewById(R.id.approx);
+        progressDialog = new SpotsDialog(context,R.style.Custom);
         Intent intent = getIntent();
         bundle = intent.getBundleExtra("house");
         description.setText(bundle.getString("Description"));
@@ -82,6 +86,7 @@ public class HousePrediction extends AppCompatActivity {
                 }
                 else
                     {
+                        progressDialog.show();
                         price = bundle.getString("Price");
                         carpet = bundle.getString("Carpet");
                         String[] prices = price.split(" ");
@@ -114,20 +119,23 @@ public class HousePrediction extends AppCompatActivity {
                                                     temp = temp/10000000;
                                                     approx.setText("Approximately " + String.valueOf(temp) + " Crores");
                                                     prediction.setVisibility(View.VISIBLE);
+                                                    progressDialog.dismiss();
                                                 }
                                                 else{
                                                     int temp = Integer.parseInt(answer);
                                                     temp = temp/100000;
                                                     approx.setText("Approximately " + String.valueOf(temp) + " Crores");
                                                     prediction.setVisibility(View.VISIBLE);
+                                                    progressDialog.dismiss();
                                                 }
                                             } catch (JSONException e) {
+                                                progressDialog.dismiss();
                                                 Log.d("ER",e.getMessage());
                                                 Toast.makeText(context,e.getMessage(),Toast.LENGTH_LONG).show();
                                             }
                                         }
                                         else{
-
+                                            progressDialog.dismiss();
                                             Toast.makeText(context,"Error in prediction",Toast.LENGTH_LONG).show();
                                         }
                                         // Display the first 500 characters of the response string.
@@ -135,6 +143,7 @@ public class HousePrediction extends AppCompatActivity {
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
+                                progressDialog.dismiss();
                                 Toast.makeText(context,error.getMessage(),Toast.LENGTH_LONG).show();
                             }
                         });
@@ -142,7 +151,5 @@ public class HousePrediction extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 }

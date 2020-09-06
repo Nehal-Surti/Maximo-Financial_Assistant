@@ -23,6 +23,10 @@
         </activity>
         <activity android:name=".HousePrediction">
         </activity>
+        <activity android:name=".IncomeTaxPart1"/>
+        <activity android:name=".IncomeTax"/>
+        <activity android:name=".IncomeTaxPart2"/>
+        <activity android:name=".IncomeFinal"/>
     </application>
 
 </manifest>

@@ -13,8 +13,7 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:layout_marginTop="30dp"
-        folding-cell:backSideColor="@color/colorAccent"
-        folding-cell:additionalFlipsCount="2">
+        folding-cell:backSideColor="@color/colorAccent">
         ​
         <LinearLayout
             android:id="@+id/cell_content_view"
@@ -178,7 +177,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:visibility="gone">
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
