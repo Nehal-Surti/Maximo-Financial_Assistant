@@ -14,6 +14,7 @@ import pandas as pd
 import statsmodels.api as sm
 import os
 workpath = os.path.dirname(os.path.abspath(os.path.dirname(__package__)))
+user = ["Mozilla/5.0","user-agent 2.0","user-agent 9.0", " user-agent 4.0" , "user-agent 5.0" , "Mozilla/7.0"]
 
 def prediction(request,location,time_t,sqft,today):
     year = time_t.split("-")[0]
@@ -70,6 +71,7 @@ def prediction(request,location,time_t,sqft,today):
 
 def index(request,bhk,location,price):
     data = dict()
+    headers = {"User-Agent": user[np.random.randint(0, 5)]}
     URL = "https://www.99acres.com/" + str(bhk)+"-bhk-property-in-"
     if location == "Dadar":
         URL = URL + "dadar-mumbai-south-ffid?"
@@ -79,7 +81,7 @@ def index(request,bhk,location,price):
         URL = URL + "churchgate-mumbai-south-ffid?"
     if price != 0 :
         URL = URL + "price_max=" + str(price)
-    r = requests.get(URL)
+    r = requests.get(URL,headers=headers)
     soup = BeautifulSoup(r.content, "html5lib")
     table = soup.find('div')
     flatname = list()

@@ -37,6 +37,7 @@
         <activity android:name=".Car_Loan_Input"/>
         <activity android:name=".CarEMICalculator"/>
         <activity android:name=".Car_Loan_Page"/>
+        <activity android:name=".Gold"/>
     </application>
 
 </manifest>

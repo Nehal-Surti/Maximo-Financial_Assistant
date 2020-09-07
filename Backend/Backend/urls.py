@@ -20,5 +20,6 @@ urlpatterns = [
     path('House_Property/', include('House_Property.urls')),
     path('Loans/', include('Loans.urls')),
     path('major/', include('major.urls')),
+    path('Gold/' , include('Gold.urls')),
     path('admin/', admin.site.urls),
 ]
