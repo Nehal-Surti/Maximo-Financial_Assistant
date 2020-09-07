@@ -12,8 +12,23 @@ from django.shortcuts import render
 def index(request,id):
     if id==5:
         data = EducationLoan()
+    if id==3:
+        data = HomeLoan()
+    if id==4:
+        data = CarLoan()
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
     return result
+
+def CarLoan():
+    df = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\CarLoans.csv'))
+    data = dict()
+    data["BankName"] = df['BankName'].tolist()
+    data["Rate"] = df['Rate'].tolist()
+    data["Fix"] = df['Fix/Float'].tolist()
+    data["maxTenure"] = df['TenureYrs'].tolist()
+    data["LTV"] = df['MaxLoanAmt'].tolist()
+    data["Road"] = df['Road/Show'].tolist()
+    return data
 
 def EducationLoan():
     df = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\Education_Loans.csv'))
@@ -22,6 +37,18 @@ def EducationLoan():
     data["IndiaRate"] = df['IndiaRate'].tolist()
     data["AbroadRate"] = df['AbroadRate'].tolist()
     return data
+
+def HomeLoan():
+    df = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\HomeLoans.csv'))
+    data = dict()
+    data["BankName"] = df["BankName"].astype(str).tolist()
+    data["Fee"] = df["ProcessingFee"].astype(str).tolist()
+    data["Rate"] = df["Rate"].astype(str).tolist()
+    data["maxTenure"] = df["MaxTenure"].astype(str).tolist()
+    data["maxAge"] = df["MaxAge"].astype(str).tolist()
+    data["LTV"] = df["PropValue"].astype(str).tolist()
+    return data
+
 
 def EMI(request,amount,emi,rate,period):
     data = dict()

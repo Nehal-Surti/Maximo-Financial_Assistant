@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,10 +29,11 @@ import java.util.ArrayList;
 
 import dmax.dialog.SpotsDialog;
 
-public class EducationEMICalculator extends AppCompatActivity {
+public class HomeEMICalculator extends AppCompatActivity {
     TextView current_emi;
-    EditText CourseFee;
+    EditText Property;
     EditText Years;
+    EditText Fee;
     JSONArray emi_year;
     JSONArray emi_princi;
     double emi;
@@ -41,49 +41,49 @@ public class EducationEMICalculator extends AppCompatActivity {
     JSONArray emi_remain;
     double roi = 1;
     SpotsDialog progressDialog;
-    int ROI = 9;
     Button Calculate;
     Button Show;
-    int amount,year;
+    int ltv;
+    int amount,year,fee;
     LinearLayout linearLayout;
     Context context = this;
+    TextView textView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.education_emi_calculator);
-        CourseFee = findViewById(R.id.course_fee);
-        Years = findViewById(R.id.edu_years);
-        Calculate = findViewById(R.id.calc_edu_emi);
-        linearLayout = findViewById(R.id.show_edu_details);
-        Show = findViewById(R.id.show_edu_emi);
-        current_emi = findViewById(R.id.current_Edu_Emi);
+        setContentView(R.layout.home_emi_calculator);
+        Property = findViewById(R.id.home_value);
+        Years = findViewById(R.id.home_years);
+        textView = findViewById(R.id.tenure_car);
+        Calculate = findViewById(R.id.calc_home_emi);
+        Fee = findViewById(R.id.home_fee);
+        linearLayout = findViewById(R.id.show_home_details);
+        Show = findViewById(R.id.show_home_emi);
+        current_emi = findViewById(R.id.current_home_Emi);
         progressDialog = new SpotsDialog(context,R.style.Custom);
         Intent intent = getIntent();
-        final Bundle bundle = intent.getBundleExtra("rates");
+        final Bundle bundle = intent.getBundleExtra("other");
+        textView.setText("Tenure in years (max " + Integer.parseInt(bundle.getString("tenure")) + " years)");
 
         Calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String tenure = CourseFee.getText().toString();
+                String tenure = Property.getText().toString();
                 String years = Years.getText().toString();
+                String fee = Fee.getText().toString();
 
-                if(tenure.isEmpty() || years.isEmpty() || ROI == 9)
+                if(tenure.isEmpty() || years.isEmpty() || fee.isEmpty())
                 {
                     Toast.makeText(context,"Please fill the information",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
+                    roi = Double.parseDouble(bundle.getString("rate").split("%")[0]);
                     amount = Integer.parseInt(tenure);
+                    ltv = Integer.parseInt(bundle.getString("ltv").split("%")[0]);
                     year = Integer.parseInt(years);
-                    if(ROI==1)
-                    {
-                        roi = Double.parseDouble(bundle.getString("India"));
-                    }
-                    else if(ROI==0)
-                    {
-                        roi = Double.parseDouble(bundle.getString("Abroad"));
-                    }
-
+                    amount = amount*(ltv/100);
+                    amount = amount+ Integer.parseInt(fee);
                     emi = Loans_Home.getEMI(amount,roi,year*12);
                     current_emi.setText("Rs. " + String.valueOf(emi));
                     linearLayout.setVisibility(View.VISIBLE);
@@ -130,23 +130,6 @@ public class EducationEMICalculator extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public void onROI(View view)
-    {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch(view.getId()) {
-            case R.id.india:
-                if (checked)
-                    ROI = 1;
-                linearLayout.setVisibility(View.GONE);
-                break;
-            case R.id.abroad:
-                if (checked)
-                    ROI = 0;
-                linearLayout.setVisibility(View.GONE);
-                break;
-        }
     }
 
     public void createDetailsList() throws JSONException

@@ -1,0 +1,20 @@
+,BankName,Rate,Fix/Float,TenureYrs,MaxLoanAmt,Road/Show
+0,HDFC Bank Car Loan,9.25,Fixed%,7 years,100%,ex-showroom
+1,SBI Car Loan,8.00,Floating%,7 years,85%,on-road
+2,ICICI Bank Car Loan,9.30,Fixed%,7 years,100%,ex-showroom
+3,Axis Bank,9.25,Fixed%,8 years,90%,ex-showroom
+4,IndusInd Bank,10.65,Fixed%,5 years,85%,ex-showroom
+5,Kotak Bank,11.50,Fixed%,5 years,90%,ex-showroom
+6,PNB,8.75,Floating%,7 years,85%,on-road
+7,Union Bank of India,8.60,Floating%,7 years,85%,on-road
+8,Central Bank of India,9.00,Floating%,7 years,90%,on-road
+9,Andhra Bank,9.40,Fixed%,7 years,85%,on-road
+10,IDBI Bank,9.30,Fixed%,7 years,90%,ex-showroom
+11,Federal Bank,9.15,Fixed%,7 years,90%,ex-showroom
+12,Bank of India,9.50,Floating%,7 years,85%,on-road
+13,Bank of Maharashtra,9.25,Floating%,7 years,85%,on-road
+14,Corporation Bank,9.55,Floating%,7 years,85%,ex-showroom
+15,Indian Bank,9.65,Floating%,7 years,85%,on-road
+16,OBC,9.05,Floating%,7 years,85%,on-road
+17,Bank of Baroda,8.90,Floating%,7 years,85%,on-road
+18,United Bank of India,9.10,Floating%,7 years,85%,on-road

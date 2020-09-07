@@ -27,8 +27,9 @@ import java.util.ArrayList;
 import dmax.dialog.SpotsDialog;
 
 public class Loans_Home extends AppCompatActivity {
+    public static ArrayList<EMIDetails> details;
     public static ArrayList<Education_Loan> education_loans;
-    Button EducationLoan;
+    Button EducationLoan,CarLoan,HomeLoan;
     SpotsDialog progressDialog;
     Context context = this;
     JSONArray banks;
@@ -40,6 +41,24 @@ public class Loans_Home extends AppCompatActivity {
         setContentView(R.layout.loans_home);
         progressDialog = new SpotsDialog(context,R.style.Custom);
         EducationLoan = findViewById(R.id.edu_loans);
+        CarLoan = findViewById(R.id.car_loans);
+        HomeLoan = findViewById(R.id.home_loans);
+
+        CarLoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Car_Loan_Input.class);
+                startActivity(intent);
+            }
+        });
+
+        HomeLoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Home_Loan_Input.class);
+                startActivity(intent);
+            }
+        });
 
         EducationLoan.setOnClickListener(new View.OnClickListener() {
             @Override

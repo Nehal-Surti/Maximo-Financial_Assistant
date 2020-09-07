@@ -31,6 +31,12 @@
         <activity android:name=".Education_Loan_Page"/>
         <activity android:name=".IncomeFinal"/>
         <activity android:name=".EMIScreen"/>
+        <activity android:name=".Home_Loan_Input"/>
+        <activity android:name=".Home_Loan_Page"/>
+        <activity android:name=".HomeEMICalculator"/>
+        <activity android:name=".Car_Loan_Input"/>
+        <activity android:name=".CarEMICalculator"/>
+        <activity android:name=".Car_Loan_Page"/>
     </application>
 
 </manifest>

@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,7 +20,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Loans"
+        android:text="Car Loans"
         android:layout_gravity="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="40sp"
@@ -42,9 +38,9 @@
 
     <EditText
         android:layout_gravity="center"
-        android:id="@+id/home_salary_input"
+        android:id="@+id/car_input"
         android:layout_width="276dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:background="@drawable/border_button"
@@ -61,93 +57,35 @@
         android:textSize="25dp" />
 
     <EditText
-        android:id="@+id/home_age_input"
+        android:id="@+id/car_age_input"
         android:layout_width="276dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
-       android:layout_gravity="center"
+        android:layout_gravity="center"
         android:background="@drawable/border_button"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Other Obligations"
+        android:text="EMI Obligations"
         android:layout_gravity="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="25dp" />
 
     <EditText
-        android:id="@+id/home_obli_input"
+        android:id="@+id/car_obli_input"
         android:layout_width="276dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:layout_gravity="center"
         android:background="@drawable/border_button"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Type of Profression"
-        android:layout_gravity="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <RadioButton
-            android:id="@+id/salaried"
-            android:layout_height="match_parent"
-            android:layout_width="30dp"
-            android:layout_marginLeft="70dp"
-            android:onClick="onProfession"
-            />
-
-        <TextView
-            android:paddingTop="8dp"
-            android:textSize="25dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Salaried"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <RadioButton
-            android:id="@+id/self_employeed"
-            android:layout_height="match_parent"
-            android:layout_width="30dp"
-            android:layout_marginLeft="70dp"
-            android:onClick="onProfession"
-            />
-
-        <TextView
-            android:paddingTop="12dp"
-            android:textSize="25dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Self-Employeed"/>
-
-    </LinearLayout>
-
     <Button
-        android:id="@+id/check_home_eli"
+        android:id="@+id/check_car_eli"
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
@@ -157,11 +95,9 @@
         android:textSize="16dp"
         android:textColor="@color/colorPrimaryDark"
         />
-
     <LinearLayout
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/show_home_eli"
+        android:id="@+id/show_car_eli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -174,7 +110,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20dp" />
         <TextView
-            android:id="@+id/home_afford_Emi"
+            android:id="@+id/car_afford_emi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -184,7 +120,7 @@
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/check_homeloans"
+            android:id="@+id/check_car_loan"
             android:layout_width="180dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -192,10 +128,9 @@
             android:layout_marginTop="30dp"
             android:textSize="16dp"
             android:background="@drawable/round_button"
-            android:text="Check Home Loan"
+            android:text="Check Car Loan"
             android:textColor="@color/colorPrimaryDark"
             />
     </LinearLayout>
 
 </LinearLayout>
-</ScrollView>
