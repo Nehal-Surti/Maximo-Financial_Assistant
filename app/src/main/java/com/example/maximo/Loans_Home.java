@@ -27,8 +27,8 @@ import java.util.ArrayList;
 import dmax.dialog.SpotsDialog;
 
 public class Loans_Home extends AppCompatActivity {
-    public static ArrayList<EMIDetails> details;
-    public static ArrayList<Education_Loan> education_loans;
+    public static ArrayList<EMIDetails> details = new ArrayList<>();
+    public static ArrayList<Education_Loan> education_loans = new ArrayList<>();
     Button EducationLoan,CarLoan,HomeLoan;
     SpotsDialog progressDialog;
     Context context = this;
@@ -114,7 +114,11 @@ public class Loans_Home extends AppCompatActivity {
 
     public static double getEMI(int amount,double rate,int period)
     {
-        double temp = amount * (rate/1200)*(Math.pow((1+rate)/1200,period))/((Math.pow((1+rate)/1200,period))-1);
+        double r = rate/1200;
+        double t = (1+r)/1200;
+        Log.d("BBB",String.valueOf(r));
+        Log.d("BBB",String.valueOf(Double.parseDouble(String.valueOf(Math.pow(t,period)))));
+        double temp = (amount * r *(Math.pow((1+rate)/1200,period)))/((Math.pow((1+rate)/1200,period))-1);
         return temp;
     }
 }

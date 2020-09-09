@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/bond_layer" />
+
+        <TextView
+            android:id="@+id/port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bonds Market"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="42sp"
+            app:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@id/port"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/txtVw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RBI Floating Rate Savings Bonds"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="22dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text=" Invest in RBI bonds with sovereign guarantee and an attractive interest rate of 7.15%"
+                    android:textSize="18dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/txtVw"/>
+
+                <Button
+                    android:id="@+id/calc_emi"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="Explore"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/desc"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@id/card"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/txtVw2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sovereign Gold Bonds"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/desc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text=" Invest in Gold without the hassle of storage and purity assurance"
+                    android:textSize="18dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/txtVw2"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="EXPLORE"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/desc2"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@id/card"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Government Securities"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text="Explore best options for long term investments with absolutely zero risk."
+                    android:textSize="18dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/txtVw2"/>
+
+                <Button
+                    android:id="@+id/ec"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="Explore"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/desc2"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@id/card"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tax Free Bonds"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:text="Taxes eating away your returns ? check out tax free bonds offering best in market yields with lower risk"
+                    android:textSize="18dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/txtVw2"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="Explore"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_below="@id/desc2"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

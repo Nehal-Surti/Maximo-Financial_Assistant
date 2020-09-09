@@ -2,6 +2,7 @@ package com.example.maximo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
@@ -24,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -54,15 +57,16 @@ public class Gold extends AppCompatActivity {
         linearLayout = findViewById(R.id.gold_layout);
         Intent intent = getIntent();
         final Bundle bundle = intent.getBundleExtra("gold");
-        today.setText(bundle.getString("answer"));
-        todayRate = Integer.parseInt(bundle.getString("answer"));
+        current.setText(bundle.getString("today"));
+        todayRate = Integer.parseInt(bundle.getString("today"));
 
         calculate.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 weight = Weight.getText().toString();
                 months = Period.getText().toString();
-
+                Log.d("DDD","Hi");
                 if(weight.isEmpty() || months.isEmpty())
                 {
                     Toast.makeText(context,"Please fill the inputs",Toast.LENGTH_LONG).show();
@@ -72,7 +76,7 @@ public class Gold extends AppCompatActivity {
                     String date = getDate(Integer.parseInt(months));
                     progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.5:8000/Gold/"+Integer.parseInt(weight)+"/"+date+"/"+Integer.parseInt(bundle.getString("answer")+"/");
+                    String url = "http://192.168.0.5:8000/Gold/"+Integer.parseInt(weight)+"/"+date+"/"+Integer.parseInt(bundle.getString("today"))+"/";
                     Toast.makeText(context, url, Toast.LENGTH_LONG).show();
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
@@ -85,13 +89,13 @@ public class Gold extends AppCompatActivity {
                                             int w = Integer.parseInt(weight);
                                             if(w<10)
                                             {
-                                                amount = Integer.parseInt(bundle.getString("answer")) * w;
+                                                amount = Integer.parseInt(bundle.getString("today")) * w;
                                             }
                                             else
                                             {
-                                                amount = Integer.parseInt(bundle.getString("answer")) * (w/10);
+                                                amount = Integer.parseInt(bundle.getString("today")) * (w/10);
                                             }
-                                            current.setText(String.valueOf(amount));
+                                            today.setText(String.valueOf(amount));
                                             future.setText(String.valueOf(answer));
                                             progressDialog.dismiss();
                                             linearLayout.setVisibility(View.VISIBLE);
@@ -119,37 +123,17 @@ public class Gold extends AppCompatActivity {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public String getDate(int m)
     {
         Date date = new Date();
         int year = 0;
         int months = 0;
+        String v,s;
         Calendar calendar = Calendar.getInstance();
         int month = calendar.get(Calendar.MONTH);
         int Year = calendar.get(Calendar.YEAR);
-        while(m>0)
-        {
-            if(m>12)
-            {
-                m=m%12;
-                year = year + m/12;
-            }
-            if(m<12)
-            {
-                months = m;
-                m=0;
-
-            }
-        }
-        Year = Year + year;
-        month=month+months;
-        while(month>12)
-        {
-            Year = Year + months/12;
-            months = months%12;
-        }
         int day = calendar.get(Calendar.DATE);
-        String v,s;
         if(day<10)
         {
             v = "0" + String.valueOf(day);
@@ -158,7 +142,7 @@ public class Gold extends AppCompatActivity {
         {
             v = String.valueOf(day);
         }
-        if(day<10)
+        if(month<10)
         {
             s = "0" + String.valueOf(month);
         }
@@ -167,6 +151,9 @@ public class Gold extends AppCompatActivity {
             s = String.valueOf(month);
         }
         String temp = String.valueOf(Year)+"-"+s+"-"+ v;
-        return temp;
+        LocalDate date1 = LocalDate.parse(temp);
+        LocalDate date2 = date1.plusMonths(m);
+        Log.d("DDDDD",String.valueOf(date2));
+        return date2.toString();
     }
 }

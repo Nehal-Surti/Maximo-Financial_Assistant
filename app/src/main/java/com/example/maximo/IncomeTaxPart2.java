@@ -3,6 +3,7 @@ package com.example.maximo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -65,7 +66,9 @@ public class IncomeTaxPart2 extends AppCompatActivity {
                     }
 
                     int total_deductions = C + NPS + education_loan + medi_claim + disableClaim;
+                    Log.d("BBB",String.valueOf(total_deductions));
                     IncomeTax.net_salary = IncomeTax.net_salary - total_deductions;
+                    Log.d("BBB",String.valueOf(IncomeTax.net_salary));
                     Intent intent = new Intent(context,IncomeFinal.class);
                     startActivity(intent);
                 }

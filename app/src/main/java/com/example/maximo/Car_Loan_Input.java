@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import dmax.dialog.SpotsDialog;
 
 public class Car_Loan_Input extends AppCompatActivity {
-    public static ArrayList<Car_Loan> car_loans;
+    public static ArrayList<Car_Loan> car_loans = new ArrayList<>();
     EditText Salary;
     EditText Age;
     EditText Obligations;
@@ -166,13 +166,13 @@ public class Car_Loan_Input extends AppCompatActivity {
         double canEMI = amount*FOIR - other;
         if(canEMI > 0)
         {
-            if(age-60 > 7)
+            if(60-age > 7)
             {
                 age = 7;
             }
             else
             {
-                age = age - 60;
+                age = 60 - age;
             }
             int months = age * 12;
             temp = (canEMI*(Math.pow((1+9.0/1200),months)-1))/(Math.pow((1+9.0/1200),months)*9.0/1200);

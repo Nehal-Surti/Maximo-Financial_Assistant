@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="54EC or Capital Gain Bonds"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/ec1"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/ec2"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="HIGHLIGHTS"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="1. Coupon Rate: 5% (Changes Infrequently)"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="2. Maturity: 5 Years"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="3. Minimum Investment: Rs. 10,000"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="4. Maximum Investment: Rs. 50,00,000"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="1dp"
+        android:text="5. Interest on 54EC bonds is taxable. No TDS is "
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="deducted on interest from 54EC bonds and wealth tax is exempted."
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/ec3"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/ec4"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="1. REC (Rural Electrification Corporation Ltd)"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="1. PFC (Power Finance Corporation Ltd)"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="1. NHAI (National Highways Authority of India)."
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="OUR VIEW ON 54EC"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/ec5"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Amount interested to invest"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <EditText
+        android:id="@+id/ec_input"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:inputType="number"
+        android:background="@drawable/border_button"/>
+    <Button
+        android:id="@+id/check_ec"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Check Investment"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ec_linear"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/ec_coupon"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:text="Coupon Payment of Rs. 100.00 every 12 months"
+            android:gravity="left"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/ec_total_coupon"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:text="Total Coupon over the maturity: Rs. 500.00"
+            android:gravity="left"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="54EC BONDS FORM LINKS"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/form1"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="1.REC 54 Download form"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/form2"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="2.NHAI 54 EC Download form"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/form3"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="3.PFC 54 EC Download form"
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/form4"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:text="5.IRFC 54 EC Download form "
+        android:gravity="left"
+        android:textSize="18dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="20dp"/>
+</LinearLayout>
+</ScrollView>

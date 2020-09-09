@@ -59,17 +59,17 @@ public class Car_Loan_Adapter extends RecyclerView.Adapter<Car_Loan_Adapter.MyVi
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.bankName.setText(loans.get(position).getBank());
-        holder.ltv.setText(loans.get(position).getLtv());
+        holder.ltv.setText("Loan-to-value: " +loans.get(position).getLtv());
         holder.fix.setText(loans.get(position).getFix());
-        holder.tenure.setText(loans.get(position).getMaxTenure());
+        holder.tenure.setText("Max Tenure: " +loans.get(position).getMaxTenure());
         holder.road.setText(loans.get(position).getRoad());
-        holder.rate.setText(loans.get(position).getRate());
+        holder.rate.setText("Interest: "+ loans.get(position).getRate()+"% p.a");
         holder.emi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("rate",loans.get(position).getRate());
-                bundle.putString("tenure",loans.get(position).getMaxTenure());
+                bundle.putString("tenure",loans.get(position).getMaxTenure().split(" ")[0]);
                 bundle.putString("road",loans.get(position).getRoad());
                 bundle.putString("ltv",loans.get(position).getLtv());
                 Intent intent = new Intent(context,CarEMICalculator.class);

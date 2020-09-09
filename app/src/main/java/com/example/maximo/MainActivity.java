@@ -24,7 +24,7 @@ import org.json.JSONObject;
 import dmax.dialog.SpotsDialog;
 
 public class MainActivity extends AppCompatActivity {
-    Button Gold;
+    Button Gold,Income,House,Loans;
     Context context = this;
     String answer;
     SpotsDialog progressDialog;
@@ -33,7 +33,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Gold = findViewById(R.id.gold);
+        Loans = findViewById(R.id.loans);
+        House = findViewById(R.id.house);
+        Income = findViewById(R.id.income);
         progressDialog = new SpotsDialog(context,R.style.Custom);
+
         Gold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +78,30 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 queue.add(jsonRequest);
+            }
+        });
+
+        House.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(context,HouseFilter.class);
+                startActivity(intent1);
+            }
+        });
+
+        Income.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(context,IncomeTax.class);
+                startActivity(intent2);
+            }
+        });
+
+        Loans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(context,Loans_Home.class);
+                startActivity(intent3);
             }
         });
     }

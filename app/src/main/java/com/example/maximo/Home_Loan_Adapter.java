@@ -59,11 +59,11 @@ public class Home_Loan_Adapter extends RecyclerView.Adapter<Home_Loan_Adapter.My
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.bankName.setText(loans.get(position).getBank());
-        holder.ltv.setText(loans.get(position).getLtv());
-        holder.age.setText(loans.get(position).getMaxAge());
-        holder.tenure.setText(loans.get(position).getMaxTenure());
-        holder.fee.setText(loans.get(position).getFee());
-        holder.rate.setText(loans.get(position).getRate());
+        holder.ltv.setText("Loan-to-value: " + loans.get(position).getLtv());
+        holder.age.setText("Max Age: "+loans.get(position).getMaxAge());
+        holder.tenure.setText("Max Tenure: "+loans.get(position).getMaxTenure());
+        holder.fee.setText("Processing Fee: "+loans.get(position).getFee());
+        holder.rate.setText("Interest: " + loans.get(position).getRate()+"% p.a");
         holder.emi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

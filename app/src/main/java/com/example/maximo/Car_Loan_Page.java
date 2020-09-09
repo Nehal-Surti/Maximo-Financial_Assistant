@@ -15,7 +15,7 @@ public class Car_Loan_Page extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.car_loan_list);
-        recyclerView = findViewById(R.id.home_recycler_view);
+        recyclerView = findViewById(R.id.car_recycler_view);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

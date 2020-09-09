@@ -49,6 +49,13 @@ def HomeLoan():
     data["LTV"] = df["PropValue"].astype(str).tolist()
     return data
 
+def getEMI(loanAmount,interestRate,periodMonth):
+    EMI = loanAmount * (interestRate / 1200) * ((1 + interestRate / 1200) ** periodMonth) / (((1 + interestRate / 1200) ** periodMonth) - 1)
+    data = dict()
+    data["Answer"] = EMI
+    result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
+    return result
+
 
 def EMI(request,amount,emi,rate,period):
     data = dict()

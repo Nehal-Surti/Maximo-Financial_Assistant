@@ -11,15 +11,15 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".HouseProperty">
-        </activity>
-        <activity android:name=".HouseFilter">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".HouseProperty">
+        </activity>
+        <activity android:name=".HouseFilter">
         </activity>
         <activity android:name=".HousePrediction">
         </activity>
@@ -38,6 +38,8 @@
         <activity android:name=".CarEMICalculator"/>
         <activity android:name=".Car_Loan_Page"/>
         <activity android:name=".Gold"/>
+        <activity android:name=".Bonds"/>
+        <activity android:name=".EC_Bonds"/>
     </application>
 
 </manifest>

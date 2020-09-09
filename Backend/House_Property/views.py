@@ -81,7 +81,7 @@ def index(request,bhk,location,price):
         URL = URL + "churchgate-mumbai-south-ffid?"
     if price != 0 :
         URL = URL + "price_max=" + str(price)
-    r = requests.get(URL,headers=headers)
+    r = requests.get(URL)
     soup = BeautifulSoup(r.content, "html5lib")
     table = soup.find('div')
     flatname = list()

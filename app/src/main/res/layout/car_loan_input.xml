@@ -37,6 +37,7 @@
         android:textSize="25dp" />
 
     <EditText
+        android:textAlignment="center"
         android:layout_gravity="center"
         android:id="@+id/car_input"
         android:layout_width="276dp"
@@ -44,7 +45,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:background="@drawable/border_button"
-        android:inputType="numberDecimal" />
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView2"
@@ -57,12 +58,13 @@
         android:textSize="25dp" />
 
     <EditText
+        android:textAlignment="center"
         android:id="@+id/car_age_input"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:layout_gravity="center"
         android:background="@drawable/border_button"/>
 
@@ -76,12 +78,13 @@
         android:textSize="25dp" />
 
     <EditText
+        android:textAlignment="center"
         android:id="@+id/car_obli_input"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:layout_gravity="center"
         android:background="@drawable/border_button"/>
     <Button
@@ -96,6 +99,7 @@
         android:textColor="@color/colorPrimaryDark"
         />
     <LinearLayout
+        android:visibility="gone"
         android:layout_marginTop="10dp"
         android:id="@+id/show_car_eli"
         android:layout_width="match_parent"

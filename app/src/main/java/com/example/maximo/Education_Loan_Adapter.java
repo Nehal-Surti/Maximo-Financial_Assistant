@@ -53,8 +53,8 @@ public class Education_Loan_Adapter extends RecyclerView.Adapter<Education_Loan_
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
        holder.bankName.setText(loans.get(position).getBank());
-       holder.india.setText(loans.get(position).getIndiaRate());
-       holder.abroad.setText(loans.get(position).getAbroadRate());
+       holder.india.setText("India Rate: " + loans.get(position).getIndiaRate());
+       holder.abroad.setText("Abroad Rate: " + loans.get(position).getAbroadRate());
         holder.emi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

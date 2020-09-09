@@ -14,11 +14,12 @@ import pandas as pd
 import statsmodels.api as sm
 import os
 workpath = os.path.dirname(os.path.abspath(os.path.dirname(__package__)))
-user = ["Mozilla/5.0","user-agent 2.0","user-agent 9.0", " user-agent 4.0" , "user-agent 5.0" , "Mozilla/7.0"]
+user = ["Mozilla/5.0","useragent/2.0","useragent/9.0", " useragent/4.0" , "useragent/5.0" , "Mozilla/7.0"]
 
 def prediction(request,weight,time_t,today):
     s = "Price"
     year = int(time_t.split("-")[0])
+    d = time_t.split("-")[0] + "-" + time_t.split("-")[1] + "-" + "01"
     cols = ["Inflation","USD"]
     df = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\Gold.csv'))
     df = df.drop(columns=cols)
@@ -26,10 +27,12 @@ def prediction(request,weight,time_t,today):
     df['Date'] = pd.to_datetime(df['Date'])
     df = df.set_index('Date')
     y = df[s].resample('MS').mean()
-    mod = sm.tsa.statespace.SARIMAX(y,order=(1,0,0),seasonal_order=(0,1,1,3),enforce_stationarity=False,enforce_invertibility=False)
+    mod = sm.tsa.statespace.SARIMAX(y,order=(1,0,0),enforce_stationarity=False,enforce_invertibility=False)
     results = mod.fit()
-    pred = results.get_prediction(start=pd.to_datetime('2020-01-01'),end=pd.to_datetime('2040-06-01'), dynamic=False)
-    forcast = pd.to_datetime(time_t)
+    pred = results.get_prediction(start=pd.to_datetime('2020-01-01'),end=pd.to_datetime(d), dynamic=False)
+    print(pred.predicted_mean)
+    forcast = pd.to_datetime(d)
+    # forcast = datetime.strptime(time_t, '%Y-%m-%d')
     forecast = pred.predicted_mean[forcast]
 
     ef = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\Gold.csv'))
@@ -42,6 +45,7 @@ def prediction(request,weight,time_t,today):
       b_date = datetime.strptime(i, '%Y-%m-%d')
       temp = (datetime.today() - b_date).days/365
       Y.append(round(temp,1))
+    # time_t = pd.to_datetime(time_t)
     date = datetime.strptime(time_t, '%Y-%m-%d')
     temp = (datetime.today() - date).days / 365
     investYear = round(temp, 1)
@@ -72,7 +76,7 @@ def index(request):
     headers = {"User-Agent": user[np.random.randint(0, 5)]}
     URL = "https://www.google.com/search?sxsrf=ALeKk02LRi6GYrfd6lf09UuibKJJu-SuwA%3A1599479462354&ei=ph5WX9WQFbGW4-EPyNuNoA0&q=gold+price&oq=gold+price&gs_lcp=CgZwc3ktYWIQAzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQR1AAWABghO0KaABwAXgAgAEAiAEAkgEAmAEAqgEHZ3dzLXdpesABAQ&sclient=psy-ab&ved=0ahUKEwjV-7ap_dbrAhUxyzgGHchtA9QQ4dUDCA0&uact=5"
     # price_min , price_max, area_min, area_max
-    r = requests.get(URL,headers = headers)
+    r = requests.get(URL)
     soup = BeautifulSoup(r.content, "html5lib")
     table = soup.findAll('div', attrs={'class': "BNeawe deIvCb AP7Wnd"})
     temp = str(table[1]).split(":")[1].split(" ")[1].replace(",", "")

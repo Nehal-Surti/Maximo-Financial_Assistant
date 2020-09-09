@@ -77,6 +77,8 @@
             android:layout_margin="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:inputType="number"
             android:background="@drawable/border_button"/>
 
@@ -93,6 +95,8 @@
         <EditText
             android:id="@+id/PPF"
             android:layout_margin="15dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="number"
@@ -114,6 +118,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="number"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:background="@drawable/border_button"/>
 
         <TextView
@@ -129,6 +135,8 @@
         <EditText
             android:id="@+id/pension"
             android:layout_margin="15dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="number"
@@ -147,6 +155,8 @@
         <EditText
             android:id="@+id/nps"
             android:layout_margin="15dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="number"
@@ -165,6 +175,8 @@
         <EditText
             android:id="@+id/education"
             android:layout_margin="15dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="number"
@@ -221,6 +233,8 @@
             android:layout_margin="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:inputType="number"
             android:background="@drawable/border_button"/>
 
@@ -276,6 +290,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="number"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:background="@drawable/border_button"/>
 
         <TextView

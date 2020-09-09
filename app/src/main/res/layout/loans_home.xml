@@ -34,7 +34,7 @@
         android:layout_marginBottom="10dp"
         android:textSize="25dp"
         android:background="@color/colorPrimary"
-        android:text="CAr Loans"
+        android:text="Home Loans"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="20dp"
@@ -48,9 +48,9 @@
         android:layout_marginBottom="6dp"
         android:textSize="25dp"
         android:background="@color/colorPrimary"
-        android:text="Home Loans"
+        android:text="Car Loans"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginLeft="14dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         />
 </LinearLayout>

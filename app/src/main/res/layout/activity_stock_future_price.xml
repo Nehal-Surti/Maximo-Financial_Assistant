@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/emi2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewStockName"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="XXXXX Rs"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="737dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="364dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/stock" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="533dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="356dp"
+        android:alpha="0.65"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        app:srcCompat="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/port"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stock Market"
+        android:textColor="@color/colorAccent"
+        android:textSize="42sp"
+        app:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:layout_marginTop="235dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewStockName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="***Stock Name***"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="7dp"
+        android:layout_below="@id/port"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewroi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Return on Investment: R %"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="7dp"
+        android:layout_below="@id/table"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="#000000" />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/table2"
+        android:layout_marginVertical="12dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="7dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="7dp">
+            <TextView
+                android:text="Price"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_column="1"
+                android:textSize="18sp"/>
+            <TextView
+                android:text="Per Share"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:layout_column="2"
+                android:textSize="18sp"/>
+            <TextView
+                android:text="Total"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:layout_column="3"
+                android:textSize="18sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="7dp">
+            <TextView
+                android:text="Today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_column="1"
+                android:textSize="18sp"/>
+            <TextView
+                android:text="xxx Rs."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:layout_column="2"
+                android:textSize="18sp"/>
+            <TextView
+                android:text="yyy Rs."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:layout_column="3"
+                android:textSize="18sp"/>
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="7dp">
+            <TextView
+                android:text="Future"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_column="1"
+                android:textSize="18sp"/>
+            <TextView
+                android:text="xxx Rs."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:layout_column="2"
+                android:textSize="18sp"/>
+            <TextView
+                android:text="yyy Rs."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="0.4"
+                android:layout_column="3"
+                android:textSize="18sp"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/table2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emi2"
+        android:layout_marginVertical="8dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <TextView
+                android:layout_weight="0.5"
+                android:id="@+id/roi"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewRrocessing"
+                android:layout_marginLeft="5dp"
+                android:text="No. of Stocks: A"
+                android:textSize="18sp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                />
+
+            <TextView
+                android:id="@+id/nostock"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewRrocessing"
+                android:layout_marginLeft="5dp"
+                android:text="Time to Maturity: y yrs"
+                android:textSize="18sp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/check_eligibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="6dp"
+        android:textSize="16dp"
+        android:text="More details"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/textViewroi"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/round_button"
+        />
+
+
+</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -41,7 +41,8 @@ android:layout_height="match_parent">
     android:layout_marginTop="10dp"
     android:ems="10"
     android:layout_gravity="center"
-    android:inputType="numberDecimal"
+    android:inputType="number"
+    android:textAlignment="center"
     android:background="@drawable/border_button"/>
 
 <TextView
@@ -60,7 +61,8 @@ android:layout_height="match_parent">
     android:layout_height="50dp"
     android:layout_gravity="center"
     android:ems="10"
-    android:inputType="numberDecimal"
+    android:textAlignment="center"
+    android:inputType="number"
     android:layout_marginTop="10dp"
     android:background="@drawable/border_button"/>
 
@@ -80,6 +82,7 @@ android:layout_height="match_parent">
     android:layout_marginTop="10dp"
     android:layout_height="50dp"
     android:ems="10"
+    android:textAlignment="center"
     android:layout_gravity="center"
     android:inputType="numberDecimal"
     android:background="@drawable/border_button"/>

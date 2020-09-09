@@ -29,6 +29,7 @@ public class IncomeTaxPart1 extends AppCompatActivity {
     int rent_received;
     int property_tax;
     int interest;
+    int select = 9;
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +45,6 @@ public class IncomeTaxPart1 extends AppCompatActivity {
         Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int select = onRadioButtonClicked(v);
                 if(select==9)
                 {
                     Intent intent1 = new Intent(context,IncomeTaxPart2.class);
@@ -119,19 +119,17 @@ public class IncomeTaxPart1 extends AppCompatActivity {
         });
     }
 
-    public int onRadioButtonClicked(View view) {
+    public void onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
-        int id = 9;
         switch(view.getId()) {
             case R.id.rent:
                 if (checked)
-                    id = 1;
+                    select = 1;
                     break;
             case R.id.self:
                 if (checked)
-                    id = 0;
+                    select = 0;
                     break;
         }
-        return id;
     }
 }
