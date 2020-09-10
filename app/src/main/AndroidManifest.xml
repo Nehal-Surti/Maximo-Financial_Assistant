@@ -43,6 +43,10 @@
         <activity android:name=".Gold"/>
         <activity android:name=".Bonds"/>
         <activity android:name=".EC_Bonds"/>
+        <activity android:name=".GovSec"/>
+        <activity android:name=".GSec_List"/>
+        <activity android:name=".Corp_Bonds"/>
+        <activity android:name=".Corp_List"/>
     </application>
 
 </manifest>

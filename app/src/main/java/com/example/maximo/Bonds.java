@@ -34,6 +34,8 @@ public class Bonds extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bonds_main);
         EC = findViewById(R.id.ec);
+        Corporate = findViewById(R.id.wc);
+        Fixed = findViewById(R.id.fix);
         EC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +43,21 @@ public class Bonds extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Corporate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Corp_Bonds.class);
+                startActivity(intent);
+            }
+        });
+        Fixed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Fix_Bonds.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public static void getCoupon(int amount, double rate, int period, int frequency,int num, final Context context)

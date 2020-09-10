@@ -26,26 +26,17 @@
         android:layout_marginTop="5dp"
         />
 
-    <TextView
-        android:id="@+id/saving"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/port"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Stock Name"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="25dp" />
-
-    <EditText
+    <Button
         android:textAlignment="center"
         android:id="@+id/funds_input2"
         android:layout_width="261dp"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@id/funds"
+        android:text="Stock Name"
+        android:textSize="20dp"
         android:layout_gravity="center"
-        android:background="@drawable/border_button"
+        android:background="@drawable/round_button"
         android:ems="10"
         android:inputType="text" />
 
@@ -79,7 +70,7 @@
         android:layout_below="@id/funds_input2"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:text="Years"
+        android:text="Days"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="25dp" />
 

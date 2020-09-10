@@ -30,4 +30,36 @@ T-bills  The appreciation is considered as short-term capital gain, and taxes as
 In case of G-Secs gain is considered long-term (LTCG) if held for more than 3 years, otherwise it is short term capital gain (STCG).
 </string>
     <string name="gsec4">If you are comfortable investing in a National Savings Certificate (NSC) or the Public Provident Fund (PPF) investing in GSecs won’t be a great issue for you. But Investments should be made only if you are looking for long term investments. Also as the Gsec market is maturing, in future GSecs can even find their way into short term investment portfolios. But for now you should only invest if you are comfortable in locking your investment for 5-10 years. </string>
+<string name="gold1">SGBs are government securities denominated in grams of gold. They are substitutes for holding physical gold. Investors have to pay the issue price in cash and the bonds will be redeemed in cash on maturity. The Bond is issued by the Reserve Bank on behalf of the Government of India.
+</string>
+
+    <string name="gold2">The quantity of gold for which the investor pays is protected, since he receives the ongoing market price at the time of redemption/ premature redemption.
+
+The SGB offers a superior alternative to holding gold in physical form.
+
+The risks and costs of storage are eliminated. Investors are assured of the market value of gold at the time of maturity and periodical interest. SGB is free from issues like making charges and purity in the case of gold in jewellery form.
+
+The only risk of holding a SGB is capital loss if the market price of gold declines. However, the investor does not lose in terms of the units of gold which he has paid for.</string>
+
+<string name="gold3">Interest obtained is taxable as per tax bracket no TDS facility.
+Redemption amount on maturity is exempted from tax.
+Capital gains obtained from sale or transfer of bonds  are taxed and also have indexation benefits for Long Term Gains (Above 3 Years) </string>
+
+    <string name="gold4">Having gold in one\'s portfolio will help in diversifying risks, particularly if one has a long-term investment horizon. But at the same time, one should not allocate more than 5-10% of the total portfolio in gold. Also one should not forget the coupon payments that are paid Bi-Anually and you can also hold these bonds as a collateral against a Loan.
+</string>
+
+    <string name="gold5">On maturity, the Gold Bonds shall be redeemed in Indian Rupees and the redemption price shall be based on simple average closing price of gold of 999 purity of previous 3 business days from the date of repayment, published by the India Bullion and Jewelers Association Limited.
+
+Both interest and redemption proceeds will be credited to the bank account furnished by the customer at the time of buying the bond.
+</string>
+
+
+    <string name="corp1">Corporate bond funds are debt funds that lend at least 80% of their money to companies with the highest possible credit rating (Very low risk investments ). This rating is given only to companies that are financially strong and have a high probability of paying lenders on time.
+</string>
+
+    <string name="corp2">There are broadly two types of corporate bond a mutual fund invests in: \n
+        1. Top-rated companies which have incredibly high CRISIL credit ratings. These are generally top public sector companies and Navratnas. \n
+        2. Companies having a slightly lower credit rating of AA-
+</string>
+    <string name="corp3">The corporate bond funds are a really attractive investment choice because the returns that they produce with respect to the risk we undertake are very high. The success of the fund depends upon the kind of companies the fund invests into and how actively it is managed.Its is a good habit to research properly about the fund through reliable sources and invest accordingly. The investment period should not be more than 4 years as their returns are linked with the interest rate the investor must reevaluate his/her strategy and position on the investment.</string>
 </resources>

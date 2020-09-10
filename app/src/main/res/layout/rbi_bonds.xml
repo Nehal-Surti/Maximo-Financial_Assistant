@@ -182,7 +182,7 @@
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="RBI BONDS FORM LINK"
+            android:text="RBI BONDS FORM LINK (click here)"
             android:gravity="center"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"/>

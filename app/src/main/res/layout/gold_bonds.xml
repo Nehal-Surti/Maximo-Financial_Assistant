@@ -12,7 +12,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Corporate Bond Funds"
+            android:text="Sovereign Gold Bonds"
             android:gravity="center"
             android:textSize="30dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@string/corp1"/>
+            android:text="@string/gold1"/>
 
         <TextView
             android:layout_margin="10dp"
@@ -30,12 +30,13 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@string/corp2"/>
+            android:text="@string/gold2"/>
+
         <TextView
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="FEATURES"
+            android:text="HIGHLIGHTS"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -44,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="15dp"
-            android:text="1. Average yields of 8-10% can be expected"
+            android:text="1. Tenure: Maturity 8 Years , Early withdrawal from 5 Years."
             android:gravity="left"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -53,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="15dp"
-            android:text="2.  High liquidity"
+            android:text="2.Coupon Rate/ Interest Rate: 2.5% (Bi Annually)"
             android:gravity="left"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -62,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="15dp"
-            android:text="3. Lower associated risk"
+            android:text="3. Minimum Investment: 1 grams."
             android:gravity="left"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -71,25 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="15dp"
-            android:text="4. Plenty of variety in terms of returns"
-            android:gravity="left"
-            android:textSize="18dp"
-            android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginLeft="15dp"
-            android:text="5. Average Maturity of the Fund: 3 - 4 Years"
-            android:gravity="left"
-            android:textSize="18dp"
-            android:textColor="@color/colorPrimaryDark"/>
-        <TextView
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginLeft="15dp"
-            android:text="6.Min Investment: NAV Based (starts from 500)"
+            android:text="4. Maximum Investment: 4 Kilograms."
             android:gravity="left"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -97,8 +80,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Advantages"
-            android:textAllCaps="true"
+            android:text="TAX TREATMENT"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -108,34 +90,12 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:textColor="@color/colorPrimaryDark"
-            android:text="Interest treatments: The capital gains are taxed as per the tenure. Short term gains are taxed as per tax bracket while Long term gains carry indexation benefits and are taxed at 20%"/>
+            android:text="@string/gold3"/>
         <TextView
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Best corporate bond funds to invest in 2020: \n
-Kotak Corporate Bond Fund \n
-ICICI Prudential Corporate Bond Fund \n
-Nippon India Prime Debt Fund \n
-Aditya Birla Sun Life Corporate Bond Fund \n
-HDFC Corporate Bond Fund
-"/>
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="so tax-free bonds offer almost 30 to 40% higher yield as compared to bank FD.@string/tax3"/>
-        <TextView
-            android:id="@+id/taxbond_info"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textAllCaps="true"
-            android:text="OUR VIEW ON Tax Free Bonds"
+            android:text="OUR VIEW ON 54EC"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"/>
@@ -145,17 +105,24 @@ HDFC Corporate Bond Fund
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@string/corp3"/>
+            android:text="@string/gold4"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/gold5"/>
         <TextView
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Amount to be invested"
+            android:text="Amount interested to invest"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"/>
         <EditText
-            android:id="@+id/corp_amount"
+            android:id="@+id/gold_amount"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:textAlignment="center"
@@ -166,12 +133,12 @@ HDFC Corporate Bond Fund
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Years"
+            android:text="Years (Min:5 and Max: 8 years)"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"/>
         <EditText
-            android:id="@+id/corp_year"
+            android:id="@+id/gold_year"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:textAlignment="center"
@@ -179,7 +146,7 @@ HDFC Corporate Bond Fund
             android:inputType="number"
             android:background="@drawable/border_button"/>
         <Button
-            android:id="@+id/check_corp"
+            android:id="@+id/check_gold"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -187,14 +154,43 @@ HDFC Corporate Bond Fund
             android:textSize="18dp"
             android:layout_gravity="center"
             android:background="@drawable/round_button"/>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/gold_linear"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/gold_coupon"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:text="Coupon Payment of Rs. 100.00 every 12 months"
+                android:gravity="left"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimary" />
+            <TextView
+                android:id="@+id/gold_total_coupon"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:text="Total Coupon over the maturity: Rs. 500.00"
+                android:gravity="left"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
         <TextView
-            android:id="@+id/corp_info"
+            android:id="@+id/gold_form"
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Click for more information"
+            android:text="Click for mor INFORMATION"
             android:gravity="center"
             android:textSize="18dp"
+            android:layout_marginBottom="20dp"
             android:textColor="@color/colorPrimaryDark"/>
     </LinearLayout>
 </ScrollView>

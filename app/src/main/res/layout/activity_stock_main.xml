@@ -64,7 +64,7 @@
                 android:layout_below="@id/txtVw"/>
 
             <Button
-                android:id="@+id/calc_emi"
+                android:id="@+id/predict_stock"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
@@ -117,7 +117,7 @@
                 android:layout_below="@id/txtVw2"/>
 
             <Button
-                android:id="@+id/calc_emi2"
+                android:id="@+id/recommend_stocks"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"

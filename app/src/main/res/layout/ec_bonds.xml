@@ -213,7 +213,7 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_marginLeft="15dp"
-        android:text="1.REC 54 Download form"
+        android:text="1.REC 54 Download form (click here)"
         android:gravity="left"
         android:textSize="18dp"
         android:textColor="@color/colorPrimaryDark"/>
@@ -223,7 +223,7 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_marginLeft="15dp"
-        android:text="2.NHAI 54 EC Download form"
+        android:text="2.NHAI 54 EC Download form (click here)"
         android:gravity="left"
         android:textSize="18dp"
         android:textColor="@color/colorPrimaryDark"/>
@@ -233,7 +233,7 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_marginLeft="15dp"
-        android:text="3.PFC 54 EC Download form"
+        android:text="3.PFC 54 EC Download form (click here)"
         android:gravity="left"
         android:textSize="18dp"
         android:textColor="@color/colorPrimaryDark"/>
@@ -243,7 +243,7 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_marginLeft="15dp"
-        android:text="5.IRFC 54 EC Download form "
+        android:text="5.IRFC 54 EC Download form (click here)"
         android:gravity="left"
         android:textSize="18dp"
         android:textColor="@color/colorPrimaryDark"

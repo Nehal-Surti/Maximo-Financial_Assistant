@@ -12,6 +12,8 @@ def index(request,id):
         data = TaxBonds()
     if id==2:
         data = GSec()
+    if id==3:
+        data = CorpBonds()
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
     return result
 def GSec():
@@ -34,6 +36,17 @@ def TaxBonds():
     data["YTM"] = df["YTM"].astype(str).tolist()
     data["Value"] = df["PresentValue"].astype(str).tolist()
     return data
+
+def CorpBonds():
+    df = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\Corp_Bank_PSU.csv'))
+    data = dict()
+    data["Symbol"] = df["Fund Name"].astype(str).tolist()
+    data["Coupon"] = df["Returns"].astype(str).tolist()
+    data["Maturity"] = df["Rating"].astype(str).tolist()
+    data["YTM"] = df["Risk"].astype(str).tolist()
+    data["Value"] = df["Latest NAV"].astype(str).tolist()
+    return data
+
 
 def Coupon(request,amount,rate,period,frequency,number):
     x = list()

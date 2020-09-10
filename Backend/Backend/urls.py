@@ -22,5 +22,6 @@ urlpatterns = [
     path('major/', include('major.urls')),
     path('Gold/' , include('Gold.urls')),
     path('Bonds/',include('Bonds.urls')),
+    path('Stocks/',include('Stocks.urls')),
     path('admin/', admin.site.urls),
 ]

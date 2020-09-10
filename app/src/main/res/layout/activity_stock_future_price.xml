@@ -10,7 +10,7 @@
     android:gravity="center_horizontal">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/emi2"
+        android:id="@+id/stock_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewStockName"
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Stock Market"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="42sp"
         app:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
@@ -70,7 +70,7 @@
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/textViewroi"
+        android:id="@+id/ROI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
@@ -139,6 +139,7 @@
                 android:layout_column="1"
                 android:textSize="18sp"/>
             <TextView
+                android:id="@+id/today_stock_price"
                 android:text="xxx Rs."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -147,6 +148,7 @@
                 android:layout_column="2"
                 android:textSize="18sp"/>
             <TextView
+                android:id="@+id/today_total_price"
                 android:text="yyy Rs."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -169,6 +171,7 @@
                 android:layout_column="1"
                 android:textSize="18sp"/>
             <TextView
+                android:id="@+id/future_stock_price"
                 android:text="xxx Rs."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -177,6 +180,7 @@
                 android:layout_column="2"
                 android:textSize="18sp"/>
             <TextView
+                android:id="@+id/future_total_price"
                 android:text="yyy Rs."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -192,7 +196,7 @@
         android:id="@+id/table2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/emi2"
+        android:layout_below="@id/stock_price"
         android:layout_marginVertical="8dp">
 
         <TableRow
@@ -200,7 +204,7 @@
             android:layout_height="match_parent" >
             <TextView
                 android:layout_weight="0.5"
-                android:id="@+id/roi"
+                android:id="@+id/nostocks"
                 android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -212,7 +216,7 @@
                 />
 
             <TextView
-                android:id="@+id/nostock"
+                android:id="@+id/noyears"
                 android:layout_weight="0.5"
                 android:gravity="center"
                 android:layout_width="wrap_content"
@@ -227,7 +231,7 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/check_eligibility"
+        android:id="@+id/stock_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -235,7 +239,7 @@
         android:textSize="16dp"
         android:text="More details"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_below="@id/textViewroi"
+        android:layout_below="@id/ROI"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="10dp"
         android:background="@drawable/round_button"

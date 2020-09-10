@@ -37,7 +37,7 @@
             android:textSize="25dp" />
 
         <EditText
-            android:id="@+id/sav_input2"
+            android:id="@+id/target"
             android:layout_width="256dp"
             android:layout_height="50dp"
             android:textAlignment="center"
@@ -62,7 +62,7 @@
 
 
         <EditText
-            android:id="@+id/time_input2"
+            android:id="@+id/stock_year"
             android:layout_width="261dp"
             android:layout_height="50dp"
             android:textAlignment="center"
@@ -75,7 +75,7 @@
             android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/calc_emi3"
+        android:id="@+id/recommend"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_below="@id/time_input2"
