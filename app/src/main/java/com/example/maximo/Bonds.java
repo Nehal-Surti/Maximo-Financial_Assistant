@@ -43,11 +43,11 @@ public class Bonds extends AppCompatActivity {
         });
     }
 
-    public static void getCoupon(int amount, double rate, int period, int frequency, final Context context)
+    public static void getCoupon(int amount, double rate, int period, int frequency,int num, final Context context)
     {
         coupons.clear();
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "http://192.168.0.5:8000/Bonds/" + amount + "/" + String.valueOf(rate) + "/" + period + "/" + frequency + "/";
+        String url = "http://192.168.0.5:8000/Bonds/" + amount + "/" + String.valueOf(rate) + "/" + period + "/" + frequency + "/"+ num+"/";
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

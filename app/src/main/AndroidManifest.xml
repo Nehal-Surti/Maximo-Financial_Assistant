@@ -11,6 +11,9 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".Tax_Free_List"/>
+        <activity android:name=".Tax_Free">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

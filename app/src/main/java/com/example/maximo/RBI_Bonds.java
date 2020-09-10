@@ -47,9 +47,11 @@ public class RBI_Bonds extends AppCompatActivity {
                 else
                 {
                     int invest = Integer.parseInt(amount);
-                    Bonds.getCoupon(invest,5.0,60,6,context);
-                    Coupon.setText(Bonds.coupons.get(0));
-                    Total.setText(Bonds.coupons.get(1));
+                    double year_coupon = (1000 * 7.15) / 100;
+                    double coupon = (year_coupon * 6 / 12);
+                    Coupon.setText("Coupon Payment of Rs. "+ String.valueOf(coupon)+ " every 6 months");
+                    double total_coupon = (year_coupon * 60 / 12);
+                    Total.setText("Total Coupon over the maturity: Rs. " + String.valueOf(total_coupon));
                     linearLayout.setVisibility(View.VISIBLE);
 
                 }

@@ -57,9 +57,12 @@ public class EC_Bonds extends AppCompatActivity {
                         Toast.makeText(context,"Please enter the Amount greater than 10,000",Toast.LENGTH_LONG).show();
                     }
                     else{
-                        Bonds.getCoupon(invest,5.0,60,6,context);
-                        Coupon.setText(Bonds.coupons.get(0));
-                        Total.setText(Bonds.coupons.get(1));
+                        Bonds.getCoupon(invest,5.0,60,6,1,context);
+                        double year_coupon = (1000 * 5.0) / 100;
+                        double coupon = (year_coupon * 6 / 12);
+                        Coupon.setText("Coupon Payment of Rs. "+ String.valueOf(coupon)+ " every 6 months");
+                        double total_coupon = (year_coupon * 60 / 12);
+                        Total.setText("Total Coupon over the maturity: Rs. " + String.valueOf(total_coupon));
                         linearLayout.setVisibility(View.VISIBLE);
                     }
                 }
