@@ -25,6 +25,7 @@ def GSec():
     data["Maturity"] = df["MATURITY"].astype(str).tolist()
     data["YTM"] = df["BID START"].astype(str).tolist()
     data["Value"] = df["ISIN"].astype(str).tolist()
+    return data
 
 def TaxBonds():
     df = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\TaxFree.csv'))

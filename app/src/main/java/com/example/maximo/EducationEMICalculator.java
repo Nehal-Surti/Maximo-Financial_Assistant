@@ -84,7 +84,7 @@ public class EducationEMICalculator extends AppCompatActivity {
                         roi = Double.parseDouble(bundle.getString("Abroad"));
                     }
 
-                    emi = Loans_Home.getEMI(amount,roi,year*12);
+                    emi = Double.parseDouble(Loans_Home.getEMI(amount,roi,year*12));
                     current_emi.setText("Rs. " + String.valueOf(emi));
                     linearLayout.setVisibility(View.VISIBLE);
                     Show.setOnClickListener(new View.OnClickListener() {

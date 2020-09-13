@@ -11,14 +11,14 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".Tax_Free_List"/>
-        <activity android:name=".Tax_Free">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Tax_Free_List"/>
+        <activity android:name=".Tax_Free">
         </activity>
         <activity android:name=".HouseProperty">
         </activity>
@@ -47,6 +47,11 @@
         <activity android:name=".GSec_List"/>
         <activity android:name=".Corp_Bonds"/>
         <activity android:name=".Corp_List"/>
+        <activity android:name=".RBI_Bonds"/>
+        <activity android:name=".Stock_Predict_Input"/>
+        <activity android:name=".Stocks_Predict"/>
+        <activity android:name=".GoldBonds"/>
+        <activity android:name=".Fix_Bonds"/>
     </application>
 
 </manifest>

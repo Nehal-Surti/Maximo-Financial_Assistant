@@ -32,7 +32,7 @@ public class Fix_Bonds extends AppCompatActivity {
         Gsec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,GSec.class);
+                Intent intent = new Intent(context,GovSec.class);
                 startActivity(intent);
             }
         });

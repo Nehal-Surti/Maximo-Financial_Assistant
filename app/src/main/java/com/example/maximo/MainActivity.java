@@ -24,7 +24,7 @@ import org.json.JSONObject;
 import dmax.dialog.SpotsDialog;
 
 public class MainActivity extends AppCompatActivity {
-    Button Gold,Income,House,Loans;
+    Button Gold,Income,House,Loans,Bonds,Stocks;
     Context context = this;
     String answer;
     SpotsDialog progressDialog;
@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
         Loans = findViewById(R.id.loans);
         House = findViewById(R.id.house);
         Income = findViewById(R.id.income);
+        Bonds = findViewById(R.id.bonds);
+        Stocks = findViewById(R.id.stocks);
         progressDialog = new SpotsDialog(context,R.style.Custom);
+
 
         Gold.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +104,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent3 = new Intent(context,Loans_Home.class);
+                startActivity(intent3);
+            }
+        });
+
+        Bonds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(context,Bonds.class);
+                startActivity(intent3);
+            }
+        });
+
+        Stocks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(context,Stock_Predict_Input.class);
                 startActivity(intent3);
             }
         });

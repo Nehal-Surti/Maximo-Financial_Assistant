@@ -60,7 +60,7 @@ public class TaxFree_Adapter extends RecyclerView.Adapter<TaxFree_Adapter.MyView
        holder.Name.setText(bonds.get(position).getName());
        holder.years.setText("Matures in " + bonds.get(position).getMaturity() + " years");
        holder.rate.setText("Coupon rate:" + bonds.get(position).getCoupon() + "%");
-       holder.value.setText("Buyin Value: Rs. " + String.valueOf(Integer.parseInt(bonds.get(position).getValue())*Tax_Free.no_of_bonds));
+       holder.value.setText("Buyin Value: Rs. " + String.valueOf(Double.parseDouble(bonds.get(position).getValue().replace(",",""))*Tax_Free.no_of_bonds));
        holder.ytm.setText("Yield-to-Maturity: " + bonds.get(position).getYtm());
        float r = Float.parseFloat(bonds.get(position).getCoupon());
        float year_coupon = (1000 * r) / 100;

@@ -52,7 +52,7 @@ public class EMIAdapter extends RecyclerView.Adapter<EMIAdapter.MyViewHolder> {
         holder.remain.setText(details.get(position).getRemaining());
         holder.princi.setText(details.get(position).getPrincipal());
         holder.interest.setText(details.get(position).getInterest());
-        holder.year.setText(details.get(position).getInterest());
+        holder.year.setText(details.get(position).getYear());
     }
 
     // Return the size of your dataset (invoked by the layout manager)

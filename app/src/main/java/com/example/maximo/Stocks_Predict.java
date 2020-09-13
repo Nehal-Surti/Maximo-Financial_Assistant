@@ -30,10 +30,10 @@ public class Stocks_Predict extends AppCompatActivity {
         ROI = findViewById(R.id.ROI);
         click = findViewById(R.id.stock_detail);
 
-        int today = Integer.parseInt(Stock_Predict_Input.today) * Stock_Predict_Input.num;
-        int future = Integer.parseInt(Stock_Predict_Input.future) * Stock_Predict_Input.num;
+        double today = Math.round(Double.parseDouble(Stock_Predict_Input.today) * Stock_Predict_Input.num);
+        double future = Math.round(Double.parseDouble(Stock_Predict_Input.future) * Stock_Predict_Input.num);
 
-        int roi = (future-today) * 100/today;
+        double roi = (Math.abs(Math.abs(future)-Math.abs(today)) * 100)/today;
 
         Name.setText(Stock_Predict_Input.name);
         Price.setText("Rs. " + String.valueOf(future));
@@ -42,7 +42,7 @@ public class Stocks_Predict extends AppCompatActivity {
         future_per.setText("Rs. " + Stock_Predict_Input.future);
         future_total.setText("Rs. " + future);
         number.setText("No.of Stocks: " + Stock_Predict_Input.num);
-        years.setText("Time to Maturity:" + Stock_Predict_Input.days);
+        years.setText("Time to Maturity:" + Stock_Predict_Input.days + " days");
         ROI.setText("Return on Investment: " + roi + "%");
 
         click.setOnClickListener(new View.OnClickListener() {

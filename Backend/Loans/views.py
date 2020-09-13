@@ -44,7 +44,7 @@ def HomeLoan():
     data["BankName"] = df["BankName"].astype(str).tolist()
     data["Fee"] = df["ProcessingFee"].astype(str).tolist()
     data["Rate"] = df["Rate"].astype(str).tolist()
-    data["maxTenure"] = df["MaxTenure"].astype(str).tolist()
+    data["maxTenure"] = df["MaxTenure"].astype(int).astype(str).tolist()
     data["maxAge"] = df["MaxAge"].astype(str).tolist()
     data["LTV"] = df["PropValue"].astype(str).tolist()
     return data
@@ -58,6 +58,8 @@ def getEMI(loanAmount,interestRate,periodMonth):
 
 
 def EMI(request,amount,emi,rate,period):
+    emi = float(emi)
+    rate = float(rate)
     data = dict()
     interestPaid = []
     principalPaid = []
@@ -65,8 +67,8 @@ def EMI(request,amount,emi,rate,period):
     AmmortizedSchedule = pd.DataFrame(
         columns=["Date", "Interest", "Principal", "Remaining Amount"])
 
-    cutInterest = round(amount * rate / 1200, 0)
-    cutPrincipal = round(emi - cutInterest, 0)
+    cutInterest = round(amount * (rate / 1200), 0)
+    cutPrincipal = round(cutInterest - emi, 0)
 
     curr_date = date.today()
 
@@ -80,8 +82,8 @@ def EMI(request,amount,emi,rate,period):
         AmmortizedSchedule.loc[len(AmmortizedSchedule)] = [curr_date, cutInterest, cutPrincipal, amount]
         curr_date = curr_date + relativedelta(months=+ 1)
 
-        cutInterest = round(amount * rate / 1200, 0)
-        cutPrincipal = round(emi - cutInterest, 0)
+        cutInterest = round(amount * (rate / 1200), 0)
+        cutPrincipal = round(cutInterest - emi, 0)
 
     AmmortizedSchedule['Date'] = pd.to_datetime(AmmortizedSchedule['Date'])
     AmmortizedSchedule = AmmortizedSchedule.groupby(AmmortizedSchedule.Date.dt.year).max()

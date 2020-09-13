@@ -29,7 +29,7 @@ import dmax.dialog.SpotsDialog;
 public class Stock_Predict_Input extends AppCompatActivity {
     EditText number,years;
     Button Predict,Name;
-    Context context;
+    Context context = this;
     public static String name;
     int check;
     SpotsDialog progressDialog;

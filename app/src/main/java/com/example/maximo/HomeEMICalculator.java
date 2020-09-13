@@ -63,6 +63,7 @@ public class HomeEMICalculator extends AppCompatActivity {
         progressDialog = new SpotsDialog(context,R.style.Custom);
         Intent intent = getIntent();
         final Bundle bundle = intent.getBundleExtra("other");
+        Log.d("Home", String.valueOf(bundle.getString("tenure")));
         textView.setText("Tenure in years (max " + Integer.parseInt(bundle.getString("tenure")) + " years)");
 
         Calculate.setOnClickListener(new View.OnClickListener() {
@@ -82,9 +83,9 @@ public class HomeEMICalculator extends AppCompatActivity {
                     amount = Integer.parseInt(tenure);
                     ltv = Integer.parseInt(bundle.getString("ltv").split("%")[0]);
                     year = Integer.parseInt(years);
-                    amount = amount*(ltv/100);
+                    amount = (amount*ltv)/100;
                     amount = amount+ Integer.parseInt(fee);
-                    emi = Loans_Home.getEMI(amount,roi,year*12);
+                    emi = Double.parseDouble(Loans_Home.getEMI(amount,roi,year*12));
                     current_emi.setText("Rs. " + String.valueOf(emi));
                     linearLayout.setVisibility(View.VISIBLE);
                     Show.setOnClickListener(new View.OnClickListener() {

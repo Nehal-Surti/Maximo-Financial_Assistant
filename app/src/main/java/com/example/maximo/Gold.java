@@ -57,7 +57,7 @@ public class Gold extends AppCompatActivity {
         linearLayout = findViewById(R.id.gold_layout);
         Intent intent = getIntent();
         final Bundle bundle = intent.getBundleExtra("gold");
-        current.setText(bundle.getString("today"));
+        current.setText("Rs. " + bundle.getString("today"));
         todayRate = Integer.parseInt(bundle.getString("today"));
 
         calculate.setOnClickListener(new View.OnClickListener() {
@@ -95,8 +95,8 @@ public class Gold extends AppCompatActivity {
                                             {
                                                 amount = Integer.parseInt(bundle.getString("today")) * (w/10);
                                             }
-                                            today.setText(String.valueOf(amount));
-                                            future.setText(String.valueOf(answer));
+                                            today.setText("Rs. " + String.valueOf(amount));
+                                            future.setText("Rs. "+String.valueOf(answer));
                                             progressDialog.dismiss();
                                             linearLayout.setVisibility(View.VISIBLE);
                                         } catch (JSONException e) {

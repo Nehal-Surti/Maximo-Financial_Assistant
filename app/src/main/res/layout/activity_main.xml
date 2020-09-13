@@ -4,17 +4,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:layout_height="200dp"
+        android:src="@drawable/main"/>
     <LinearLayout
-        android:layout_marginTop="150dp"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <Button
+            android:id="@+id/bonds"
+            android:layout_marginLeft="20dp"
+            android:layout_width="150dp"
+            android:background="@drawable/loan_layer"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="BONDS INVEST"
+            android:layout_marginRight="20dp"
+            android:layout_height="130dp"/>
+
+        <View
+            android:layout_marginLeft="10dp"
+            android:layout_width="2dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:paddingLeft="88dp"
+            android:paddingRight="88dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/stocks"
+            android:layout_marginLeft="20dp"
+            android:layout_width="150dp"
+            android:textSize="30dp"
+            android:text="STOCKS INVEST"
+            android:background="@drawable/loan_layer"
+            android:layout_gravity="center"
+            android:layout_height="130dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:background="@color/white"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="150dp">
 
         <Button
             android:id="@+id/gold"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="GOLD Invest"
             android:textSize="30dp"
@@ -34,7 +80,7 @@
 
         <Button
             android:id="@+id/house"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="House Property"
             android:textSize="28dp"
@@ -45,13 +91,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:background="@color/white"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="150dp">
 
         <Button
             android:id="@+id/income"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="Income Tax"
             android:textSize="30dp"
@@ -71,7 +118,7 @@
 
         <Button
             android:id="@+id/loans"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="Loans"
             android:textSize="30dp"
@@ -81,34 +128,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
-
-        <Button
-            android:layout_marginLeft="25dp"
-            android:layout_width="150dp"
-            android:background="@drawable/loan_layer"
-            android:layout_gravity="center"
-            android:layout_marginRight="20dp"
-            android:layout_height="130dp"/>
-
-        <View
-            android:layout_marginLeft="10dp"
-            android:layout_width="2dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
-            android:paddingLeft="88dp"
-            android:paddingRight="88dp"
-            android:background="@color/colorPrimaryDark" />
-
-        <Button
-            android:layout_marginLeft="25dp"
-            android:layout_width="150dp"
-            android:background="@drawable/loan_layer"
-            android:layout_gravity="center"
-            android:layout_height="130dp"/>
-
-    </LinearLayout>
 </LinearLayout>

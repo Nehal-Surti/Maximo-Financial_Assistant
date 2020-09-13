@@ -126,7 +126,7 @@ public class GovSec extends AppCompatActivity {
             gSecs.add(new GSec(symbol.getString(i),series.getString(i),rate.getString(i),maturity.getString(i),value.getString(i),ytm.getString(i)));
         }
         progressDialog.dismiss();
-        Intent intent = new Intent(context,Tax_Free_List.class);
+        Intent intent = new Intent(context,GSec_List.class);
         startActivity(intent);
     }
 }

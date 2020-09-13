@@ -22,6 +22,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
 
 import dmax.dialog.SpotsDialog;
@@ -112,13 +114,15 @@ public class Loans_Home extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public static double getEMI(int amount,double rate,int period)
+    public static String getEMI(int amount,double rate,int period)
     {
-        double r = rate/1200;
-        double t = (1+r)/1200;
-        Log.d("BBB",String.valueOf(r));
-        Log.d("BBB",String.valueOf(Double.parseDouble(String.valueOf(Math.pow(t,period)))));
-        double temp = (amount * r *(Math.pow((1+rate)/1200,period)))/((Math.pow((1+rate)/1200,period))-1);
-        return temp;
+        Log.d("Loan",String.valueOf(period));
+        double s = (Math.pow((1+rate)/1200,period));
+        double v = (Math.pow((1+rate)/1200,period-1));
+        double temp = (amount * (rate/1200) *s)/v;
+        Log.d("Loan",String.valueOf(s));
+        Log.d("Loan",String.valueOf(v));
+        Log.d("Loan",BigDecimal.valueOf(temp).toPlainString());
+        return BigDecimal.valueOf(temp).round(MathContext.DECIMAL32).toPlainString();
     }
 }

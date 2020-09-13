@@ -64,7 +64,7 @@ public class Gsec_Adapter extends RecyclerView.Adapter<Gsec_Adapter.MyViewHolder
         float year_coupon = (GovSec.invest * r) / 100;
         float coupon = (year_coupon * 6 / 12) * GovSec.no_of_bonds;
         holder.coupon.setText("Coupon Payment of Rs. "+ String.valueOf(coupon)+ " every 12 months");
-        float total_coupon = (year_coupon * (Integer.parseInt(bonds.get(position).getMaturity()) *12) / 12) * Tax_Free.no_of_bonds;
+        float total_coupon = (year_coupon * (Integer.parseInt(bonds.get(position).getMaturity())*12)/12) * GovSec.no_of_bonds;
         holder.total.setText("Total Coupon over the maturity: Rs. " + String.valueOf(total_coupon));
     }
 

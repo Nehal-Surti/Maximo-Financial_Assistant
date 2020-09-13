@@ -82,7 +82,7 @@ public class CarEMICalculator extends AppCompatActivity {
                     Log.d("BBB",String.valueOf(ltv));
                     year = Integer.parseInt(years);
                     amount = (amount*ltv)/100;
-                    emi = Loans_Home.getEMI(amount,roi,year*12);
+                    emi = Double.parseDouble(Loans_Home.getEMI(amount,roi,year*12));
                     current_emi.setText("Rs. " + String.valueOf(emi));
                     linearLayout.setVisibility(View.VISIBLE);
                     Show.setOnClickListener(new View.OnClickListener() {

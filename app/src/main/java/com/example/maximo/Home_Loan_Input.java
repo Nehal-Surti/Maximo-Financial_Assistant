@@ -220,7 +220,7 @@ public class Home_Loan_Input extends AppCompatActivity {
                 age = 60 - age;
             }
             int months = age * 12;
-            temp = (canEMI*(Math.pow((1+7.5/1200),months)-1))/(Math.pow((1+7.5/1200),months)*7.5/1200);
+            temp = (canEMI*(Math.pow((1+7.5/1200),months)-1))/(Math.pow((1+7.5/1200),months)*(7.5/1200));
         }
         return  temp;
     }

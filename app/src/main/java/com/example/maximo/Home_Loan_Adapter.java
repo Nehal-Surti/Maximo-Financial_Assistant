@@ -63,7 +63,7 @@ public class Home_Loan_Adapter extends RecyclerView.Adapter<Home_Loan_Adapter.My
         holder.age.setText("Max Age: "+loans.get(position).getMaxAge());
         holder.tenure.setText("Max Tenure: "+loans.get(position).getMaxTenure());
         holder.fee.setText("Processing Fee: "+loans.get(position).getFee());
-        holder.rate.setText("Interest: " + loans.get(position).getRate()+"% p.a");
+        holder.rate.setText("Interest: " + loans.get(position).getRate()+" p.a");
         holder.emi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +71,7 @@ public class Home_Loan_Adapter extends RecyclerView.Adapter<Home_Loan_Adapter.My
                 bundle.putString("rate",loans.get(position).getRate());
                 bundle.putString("tenure",loans.get(position).getMaxTenure());
                 bundle.putString("ltv",loans.get(position).getLtv());
-                Intent intent = new Intent(context,EducationEMICalculator.class);
+                Intent intent = new Intent(context,HomeEMICalculator.class);
                 intent.putExtra("other",bundle);
                 context.startActivity(intent);
             }

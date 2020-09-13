@@ -13,12 +13,12 @@ workpath = os.path.dirname(os.path.abspath(os.path.dirname(__package__)))
 
 
 def index(request,days,name):
-    path_dict = {'icici': '\\content\\icici.csv', 'hdfc': '\\content\\hdfc.csv', 'bajaj': '\\content\\bajaj.csv',
-                 'cipla': '\\content\\cipla.csv',
-                 'gail': '\\content\\gail.csv', 'hul': '\\content\\hul.csv', 'itc': '\\content\\itc.csv',
-                 'ongc': '\\content\\ongc.csv',
-                 'tcs': '\\content\\tcs.csv', 'titan': '\\content\\titan.csv'}
-    address = workpath+"Backend\\templates"+ path_dict[name]
+    path_dict = {'icici': 'Backend\\templates\\content\\icici.csv', 'hdfc': 'Backend\\templates\\content\\hdfc.csv', 'bajaj': 'Backend\\templates\\content\\bajaj.csv',
+                 'cipla': 'Backend\\templates\\content\\cipla.csv',
+                 'gail': 'Backend\\templates\\content\\gail.csv', 'hul': 'Backend\\templates\\content\\hul.csv', 'itc': 'Backend\\templates\\content\\itc.csv',
+                 'ongc': 'Backend\\templates\\content\\ongc.csv',
+                 'tcs': 'Backend\\templates\\content\\tcs.csv', 'titan': 'Backend\\templates\\content\\titan.csv'}
+    address = os.path.join(workpath,path_dict[name])
     df = pd.read_csv(address)
     data = dict()
     data["Today"] = df.tail(1)["Close"].astype(str).tolist()[0]
@@ -39,6 +39,6 @@ def index(request,days,name):
     x_forecast = np.array(df.drop(['Prediction'], 1))[-forecast_out:]
     lasso_model_forecast_prediction = lasso_model.predict(x_forecast)
 
-    data["Future"] = str(lasso_model_forecast_prediction[-1])
+    data["Future"] = str(round(lasso_model_forecast_prediction[-1],2))
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
     return result
