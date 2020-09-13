@@ -49,10 +49,11 @@ def HomeLoan():
     data["LTV"] = df["PropValue"].astype(str).tolist()
     return data
 
-def getEMI(loanAmount,interestRate,periodMonth):
-    EMI = loanAmount * (interestRate / 1200) * ((1 + interestRate / 1200) ** periodMonth) / (((1 + interestRate / 1200) ** periodMonth) - 1)
+def getEMI(request,loan,interest,period):
+    interestRate = float(interest)
+    EMI = loan * (interestRate / 1200) * ((1 + interestRate / 1200) ** period) / (((1 + interestRate / 1200) ** period) - 1)
     data = dict()
-    data["Answer"] = EMI
+    data["Answer"] = str(round(EMI,3))
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
     return result
 
@@ -68,7 +69,7 @@ def EMI(request,amount,emi,rate,period):
         columns=["Date", "Interest", "Principal", "Remaining Amount"])
 
     cutInterest = round(amount * (rate / 1200), 0)
-    cutPrincipal = round(cutInterest - emi, 0)
+    cutPrincipal = round(emi - cutInterest, 0)
 
     curr_date = date.today()
 
@@ -83,7 +84,7 @@ def EMI(request,amount,emi,rate,period):
         curr_date = curr_date + relativedelta(months=+ 1)
 
         cutInterest = round(amount * (rate / 1200), 0)
-        cutPrincipal = round(cutInterest - emi, 0)
+        cutPrincipal = round(emi - cutInterest, 0)
 
     AmmortizedSchedule['Date'] = pd.to_datetime(AmmortizedSchedule['Date'])
     AmmortizedSchedule = AmmortizedSchedule.groupby(AmmortizedSchedule.Date.dt.year).max()

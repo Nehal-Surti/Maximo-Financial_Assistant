@@ -82,7 +82,7 @@ public class CarEMICalculator extends AppCompatActivity {
                     Log.d("BBB",String.valueOf(ltv));
                     year = Integer.parseInt(years);
                     amount = (amount*ltv)/100;
-                    emi = Double.parseDouble(Loans_Home.getEMI(amount,roi,year*12));
+                    emi = Double.parseDouble(getEMI(amount,roi,year*12,context));
                     current_emi.setText("Rs. " + String.valueOf(emi));
                     linearLayout.setVisibility(View.VISIBLE);
                     Show.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +129,38 @@ public class CarEMICalculator extends AppCompatActivity {
             }
         });
     }
-
+    public static String getEMI(int amount,double rate,int period,final Context context)
+    {
+        final String[] temp = new String[1];
+        RequestQueue queue = Volley.newRequestQueue(context);
+        String url = "http://192.168.0.5:8000/Loans/" + 5 + "/";
+        Toast.makeText(context, url, Toast.LENGTH_LONG).show();
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("ABC", response.toString());
+                        if (response.length() != 0) {
+                            try {
+                                temp[0] = response.getString("Answer");
+                            } catch (JSONException e) {
+                                Log.d("ER", e.getMessage());
+                                Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(context, "No loans found", Toast.LENGTH_LONG).show();
+                        }
+                        // Display the first 500 characters of the response string.
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+        queue.add(jsonRequest);
+        return temp[0];
+    }
     public void createDetailsList() throws JSONException
     {
         Loans_Home.details.clear();

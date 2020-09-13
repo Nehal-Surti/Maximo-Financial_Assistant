@@ -114,15 +114,4 @@ public class Loans_Home extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public static String getEMI(int amount,double rate,int period)
-    {
-        Log.d("Loan",String.valueOf(period));
-        double s = (Math.pow((1+rate)/1200,period));
-        double v = (Math.pow((1+rate)/1200,period-1));
-        double temp = (amount * (rate/1200) *s)/v;
-        Log.d("Loan",String.valueOf(s));
-        Log.d("Loan",String.valueOf(v));
-        Log.d("Loan",BigDecimal.valueOf(temp).toPlainString());
-        return BigDecimal.valueOf(temp).round(MathContext.DECIMAL32).toPlainString();
-    }
 }
