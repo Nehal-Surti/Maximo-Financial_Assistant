@@ -8,6 +8,7 @@ import os
 workpath = os.path.dirname(os.path.abspath(os.path.dirname(__package__)))
 
 def index(request,id):
+    data = dict()
     if id==1:
         data = TaxBonds()
     if id==2:
@@ -48,6 +49,14 @@ def CorpBonds():
     data["Value"] = df["Latest NAV"].astype(str).tolist()
     return data
 
+def Future(request,amount,rate,year):
+    data = dict()
+    rate = float(rate)
+    rate = (1+rate)/100
+    x = (amount*rate)**year
+    data['Answer'] = str(round(x,2))
+    result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")
+    return result
 
 def Coupon(request,amount,rate,period,frequency,number):
     x = list()

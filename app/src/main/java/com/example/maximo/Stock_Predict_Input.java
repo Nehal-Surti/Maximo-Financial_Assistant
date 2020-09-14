@@ -81,8 +81,7 @@ public class Stock_Predict_Input extends AppCompatActivity {
                     days = Integer.parseInt(year);
                     progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.5:8000/Stocks/" + Integer.parseInt(year) + "/" + name + "/";
-                    Toast.makeText(context, url, Toast.LENGTH_LONG).show();
+                    String url = "http://192.168.0.6:8000/Stocks/" + Integer.parseInt(year) + "/" + name + "/";
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
                                 @Override

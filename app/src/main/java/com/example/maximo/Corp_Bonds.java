@@ -67,8 +67,7 @@ public class Corp_Bonds extends AppCompatActivity {
                 }
                 progressDialog.show();
                 RequestQueue queue = Volley.newRequestQueue(context);
-                String url = "http://192.168.0.5:8000/Bonds/" + 3 + "/";
-                Toast.makeText(context, url, Toast.LENGTH_LONG).show();
+                String url = "http://192.168.0.6:8000/Bonds/" + 3 + "/";
                 JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
                             @Override

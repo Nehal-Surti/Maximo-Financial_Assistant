@@ -106,7 +106,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="OUR VIEW ON 54EC"
+            android:text="OUR VIEW ON RBI BONDS"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/colorPrimaryDark"/>

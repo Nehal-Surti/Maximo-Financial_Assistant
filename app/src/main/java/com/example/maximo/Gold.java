@@ -76,8 +76,7 @@ public class Gold extends AppCompatActivity {
                     String date = getDate(Integer.parseInt(months));
                     progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.5:8000/Gold/"+Integer.parseInt(weight)+"/"+date+"/"+Integer.parseInt(bundle.getString("today"))+"/";
-                    Toast.makeText(context, url, Toast.LENGTH_LONG).show();
+                    String url = "http://192.168.0.6:8000/Gold/"+Integer.parseInt(weight)+"/"+date+"/"+Integer.parseInt(bundle.getString("today"))+"/";
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
                                 @Override

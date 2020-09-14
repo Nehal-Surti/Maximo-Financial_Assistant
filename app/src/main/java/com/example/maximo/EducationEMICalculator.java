@@ -45,6 +45,7 @@ public class EducationEMICalculator extends AppCompatActivity {
     Button Calculate;
     Button Show;
     int amount,year;
+    String temp = "";
     LinearLayout linearLayout;
     Context context = this;
     @Override
@@ -84,15 +85,41 @@ public class EducationEMICalculator extends AppCompatActivity {
                         roi = Double.parseDouble(bundle.getString("Abroad"));
                     }
 
-                    emi = Double.parseDouble(getEMI(amount,roi,year*12,context));
-                    current_emi.setText("Rs. " + String.valueOf(emi));
-                    linearLayout.setVisibility(View.VISIBLE);
+                    RequestQueue queue = Volley.newRequestQueue(context);
+                    String url = "http://192.168.0.6:8000/Loans/" + amount + "/" + String.valueOf(roi) + "/" + year*12 + "/";
+                    JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    Log.d("ABC", response.toString());
+                                    if (response.length() != 0) {
+                                        try {
+                                            temp = response.getString("Answer");
+                                            emi = Double.parseDouble(temp);
+                                            current_emi.setText("Rs. " + String.valueOf(emi));
+                                            linearLayout.setVisibility(View.VISIBLE);
+                                        } catch (JSONException e) {
+                                            Log.d("ER", e.getMessage());
+                                            Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+                                        }
+                                    } else {
+                                        Toast.makeText(context, "No loans found", Toast.LENGTH_LONG).show();
+                                    }
+                                    // Display the first 500 characters of the response string.
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    queue.add(jsonRequest);
                     Show.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             progressDialog.show();
                             RequestQueue queue = Volley.newRequestQueue(context);
-                            String url = "http://192.168.0.5:8000/Loans/" + amount + "/" + Float.parseFloat(String.valueOf(emi)) + "/" + Float.parseFloat(String.valueOf(emi)) + "/" + year*12 + "/";
+                            String url = "http://192.168.0.6:8000/Loans/" + amount + "/" + Float.parseFloat(String.valueOf(emi)) + "/" + Float.parseFloat(String.valueOf(roi)) + "/" + year*12 + "/";
                             Toast.makeText(context, url, Toast.LENGTH_LONG).show();
                             JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                                     new Response.Listener<JSONObject>() {
@@ -136,8 +163,7 @@ public class EducationEMICalculator extends AppCompatActivity {
     {
         final String[] temp = new String[1];
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "http://192.168.0.5:8000/Loans/" + 5 + "/";
-        Toast.makeText(context, url, Toast.LENGTH_LONG).show();
+        String url = "http://192.168.0.6:8000/Loans/" + 5 + "/";
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

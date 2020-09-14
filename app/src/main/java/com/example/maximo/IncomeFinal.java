@@ -1,7 +1,11 @@
 package com.example.maximo;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -16,7 +20,8 @@ public class IncomeFinal extends AppCompatActivity {
     TextView taxableAmount;
     TextView taxPaid;
     int taxable;
-    LinearLayout linearLayout;
+    TextView taxSave;
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,7 @@ public class IncomeFinal extends AppCompatActivity {
         calculate = findViewById(R.id.calculateTax);
         taxableAmount = findViewById(R.id.total_taxable);
         taxPaid = findViewById(R.id.tax_paid);
+        taxSave = findViewById(R.id.tax_save);
 
         taxableAmount.setText(String.valueOf(IncomeTax.net_salary));
         taxable = IncomeTax.net_salary;
@@ -33,12 +39,34 @@ public class IncomeFinal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 double tax_amount = calulateTax();
+                if(taxable < 500000)
+                {
+                    if(tax_amount > 12500)
+                    {
+                        tax_amount = tax_amount - 12500;
+                    }
+                    else
+                    {
+                        tax_amount = 0;
+                    }
+                }
                 double cess = calculateCess(tax_amount);
                 Log.d("BBB",String.valueOf(cess));
                 tax_amount  = tax_amount + cess;
                 taxPaid.setText(String.valueOf(tax_amount));
                 tax.setVisibility(View.VISIBLE);
+            }
+        });
 
+        taxSave.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                String url = "https://groww.in/blog/how-to-save-tax/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+                return false;
             }
         });
     }

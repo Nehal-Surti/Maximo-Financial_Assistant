@@ -322,4 +322,13 @@
             android:textColor="@color/colorPrimaryDark"/>
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/tax_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"
+        android:text="Click to know how to save on tax"/>
 </LinearLayout>

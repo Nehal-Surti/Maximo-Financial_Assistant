@@ -102,8 +102,7 @@ public class HousePrediction extends AppCompatActivity {
                         Year = Year + Integer.parseInt(year.getText().toString());
                         String time = String.valueOf(Year) + "-0" + String.valueOf(month) + "-01";
                         RequestQueue queue = Volley.newRequestQueue(context);
-                        String url = "http://192.168.0.5:8000/House_Property/"+ location + "/" + time + "/" + area + "/" + Integer.parseInt(price) + "/";
-                        Toast.makeText(context,url,Toast.LENGTH_LONG).show();
+                        String url = "http://192.168.0.6:8000/House_Property/"+ location + "/" + time + "/" + area + "/" + Integer.parseInt(price) + "/";
                         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url,null,
                                 new Response.Listener<JSONObject>() {
                                     @Override

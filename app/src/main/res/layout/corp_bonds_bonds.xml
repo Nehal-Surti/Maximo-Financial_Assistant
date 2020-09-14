@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:layout_marginLeft="15dp"
-            android:text="6.Min Investment: NAV Based (starts from 500)"
+            android:text="6.Min Investment: NAV Based (Rs. 500)"
             android:gravity="left"
             android:textSize="18dp"
             android:textColor="@color/colorPrimaryDark"/>
