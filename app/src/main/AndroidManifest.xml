@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Portfolio">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,6 +54,11 @@
         <activity android:name=".Stocks_Predict"/>
         <activity android:name=".GoldBonds"/>
         <activity android:name=".Fix_Bonds"/>
+        <activity android:name=".PortFolio_Input"/>
+        <activity android:name=".Portfolio_List"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

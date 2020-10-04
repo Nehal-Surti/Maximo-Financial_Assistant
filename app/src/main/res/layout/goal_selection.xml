@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/portfolio_layer" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:baselineAligned="false"
+        android:fontFamily="@font/eczar_semibold"
+        android:text="Select Your Goal"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/master_layout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/circle_background"
+            android:padding="25dp"
+            app:srcCompat="@drawable/graduated" />
+
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/masters_banner" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/house_layout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/circle_background"
+            android:padding="25dp"
+            app:srcCompat="@drawable/house" />
+
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/house_banner" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/money_layout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/circle_background"
+            android:padding="25dp"
+            app:srcCompat="@drawable/money" />
+
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/money_banner" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/car_layout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/circle_background"
+            android:padding="25dp"
+            app:srcCompat="@drawable/car" />
+
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/car_banner" />
+    </LinearLayout>
+
+</LinearLayout>

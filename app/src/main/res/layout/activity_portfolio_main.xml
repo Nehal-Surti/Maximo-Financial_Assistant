@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:backgroundTint="@color/colordarklight">
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="737dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="364dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/portfolio" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="533dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="356dp"
+            android:alpha="0.72"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.754"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.011"
+            android:background="@drawable/gradient_box" />
+
+        <Button
+            android:id="@+id/create_port"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/ratingBar"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/round_button"
+            android:text="Create Portfolio"
+            android:textSize="20dp"
+            android:fontFamily="@font/eczar_semibold"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Portfolio Creation"
+            android:fontFamily="@font/eczar_semibold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="35dp"
+            android:gravity="center"
+            android:layout_marginTop="100dp"
+            />
+
+        <TextView
+            android:id="@+id/funds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="130dp"
+            android:text="Funds Collected"
+            android:fontFamily="@font/assistant_semibold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:layout_below="@id/sav_input" />
+
+        <TextView
+            android:id="@+id/salary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="140dp"
+            android:text="Annual Salary"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:fontFamily="@font/assistant_semibold"
+            android:layout_below="@id/goal_input" />
+
+        <TextView
+            android:id="@+id/Goal_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/port"
+            android:layout_marginLeft="140dp"
+            android:fontFamily="@font/assistant_semibold"
+            android:text="Goal Amount"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/saving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="130dp"
+            android:text="Annual Savings"
+            android:fontFamily="@font/assistant_semibold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:layout_below="@id/sal_input" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toler"
+            android:layout_marginLeft="80dp"
+            android:outlineAmbientShadowColor="@color/colorPrimary"
+            android:progressBackgroundTint="@color/colorAccent"
+            android:progressTint="@color/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Tenure in years"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:fontFamily="@font/assistant_semibold"
+            android:layout_below="@id/funds_input"
+            android:layout_marginLeft="130dp"/>
+
+        <TextView
+            android:id="@+id/toler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="130dp"
+            android:text="Risk Tolerance"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:fontFamily="@font/assistant_semibold"
+            android:layout_below="@+id/time_input" />
+
+        <EditText
+            android:textAlignment="center"
+            android:id="@+id/funds_input"
+            android:layout_width="261dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginLeft="80dp"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/funds"
+            android:background="@drawable/border_button"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:textAlignment="center"
+            android:id="@+id/time_input"
+            android:layout_width="261dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:background="@drawable/border_button"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/time"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:id="@+id/sal_input"
+            android:layout_width="256dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border_button"
+            android:ems="10"
+            android:textAlignment="center"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/salary"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:textAlignment="center"
+            android:id="@+id/goal_input"
+            android:layout_width="256dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border_button"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/Goal_amt"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:textAlignment="center"
+            android:id="@+id/sav_input"
+            android:layout_width="256dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border_button"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/saving"
+            android:layout_marginLeft="80dp"
+            android:gravity="center_horizontal" />
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

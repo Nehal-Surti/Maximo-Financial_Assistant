@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:backgroundTint="@color/colordarklight">
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="737dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="364dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/portfolio" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="533dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="356dp"
+        android:alpha="0.72"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        android:background="@drawable/gradient_box"
+        />
+
+        <TextView
+            android:id="@+id/port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate Goal"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="42sp"
+            app:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:layout_marginTop="235dp"
+            />
+
+    <Button
+        android:id="@+id/calc_emi"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/round_button"
+        android:text="Confirm Goal"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/goal"
+        />
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="Select Goal:"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/port"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtVw"
+        android:layout_toRightOf="@+id/txtVw"
+        />
+
+        <RadioGroup
+            android:id="@+id/radioGroup_car"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner1"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="Hatchback"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="Sedan"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="92dp"
+                tools:layout_editor_absoluteY="593dp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="SUV/Sports"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="92dp"
+                tools:layout_editor_absoluteY="593dp" />
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup_home"
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner1"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:visibility="invisible">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="City, 1BHK"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="City, 2 BHK"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="92dp"
+                tools:layout_editor_absoluteY="593dp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="Suburb, 1 BHK"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="92dp"
+                tools:layout_editor_absoluteY="593dp" />
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimary"
+                android:text="Suburb, 2 BHK"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="92dp"
+                tools:layout_editor_absoluteY="593dp" />
+        </RadioGroup>
+
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/childno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="50dp"
+            android:text="Number of Children"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:layout_below="@id/spinner1" />
+        
+        <EditText
+            android:visibility="invisible"
+            android:id="@+id/childno_input"
+            android:layout_width="256dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/childno"
+            android:layout_marginLeft="50dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_marginHorizontal="15dp"
+            android:text="XXXXX Rs"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:layout_below="@id/spinner1"/>
+
+    </RelativeLayout></androidx.core.widget.NestedScrollView>
