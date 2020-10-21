@@ -12,7 +12,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="200dp"
         android:layout_gravity="center"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:src="@drawable/main"/>
     <LinearLayout
         android:background="@color/white"
@@ -41,7 +41,7 @@
             android:background="@color/colorPrimaryDark" />
 
         <Button
-            android:id="@+id/mutual"
+            android:id="@+id/loans"
             android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="Loans"
@@ -121,12 +121,11 @@
             android:layout_width="150dp"
             android:text="House Property"
             android:textSize="28dp"
-            android:background="@drawable/loan_layer"
+            android:background="@drawable/house_layer"
             android:layout_gravity="center"
             android:layout_height="130dp"/>
 
     </LinearLayout>
-
     <LinearLayout
         android:background="@color/white"
         android:orientation="horizontal"
@@ -134,12 +133,12 @@
         android:layout_height="150dp">
 
         <Button
-            android:id="@+id/income"
+            android:id="@+id/mutual"
             android:layout_marginLeft="20dp"
             android:layout_width="150dp"
-            android:text="Income Tax"
+            android:text="MUTUAL FUNDS"
             android:textSize="30dp"
-            android:background="@drawable/loan_layer"
+            android:background="@drawable/mutual_layer"
             android:layout_gravity="center"
             android:layout_marginRight="20dp"
             android:layout_height="130dp"/>
@@ -154,15 +153,17 @@
             android:background="@color/colorPrimaryDark" />
 
         <Button
-            android:id="@+id/loans"
+            android:id="@+id/income"
             android:layout_marginLeft="20dp"
             android:layout_width="150dp"
-            android:text="Loans"
-            android:textSize="30dp"
-            android:background="@drawable/loan_layer"
+            android:text="Income Tax"
+            android:textSize="28dp"
+            android:background="@drawable/tax_layer"
             android:layout_gravity="center"
             android:layout_height="130dp"/>
 
     </LinearLayout>
+
+
 
 </LinearLayout>

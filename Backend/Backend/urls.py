@@ -24,5 +24,6 @@ urlpatterns = [
     path('Bonds/',include('Bonds.urls')),
     path('Stocks/',include('Stocks.urls')),
     path('Portfolio/',include('Portfolio.urls')),
+    path('MutualFunds/',include('MutualFunds.urls')),
     path('admin/', admin.site.urls),
 ]

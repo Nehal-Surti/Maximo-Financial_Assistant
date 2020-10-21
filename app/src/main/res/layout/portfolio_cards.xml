@@ -4,9 +4,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/port_layout"
-    android:background="@drawable/loan_layer"
+    android:background="#d0efff"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
@@ -26,7 +27,7 @@
                 android:id="@+id/port_Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Predict Price of Stock:"
+                android:text="Mutual Funds Investment"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22dp"
@@ -53,7 +54,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
                 android:background="@color/white"
-                android:text="Explore"
+                android:text="Explore Bonds Sector"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_below="@id/desc"
                 />

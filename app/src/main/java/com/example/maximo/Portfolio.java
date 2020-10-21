@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Portfolio extends AppCompatActivity {
     ImageView house,master,money,car;
     Context context = this;
+    public static String GOAL;
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class Portfolio extends AppCompatActivity {
         house.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                GOAL = "House";
                 Intent intent = new Intent(context,PortFolio_Input.class);
                 startActivity(intent);
                 return false;
@@ -36,6 +38,7 @@ public class Portfolio extends AppCompatActivity {
         master.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                GOAL = "Degree";
                 Intent intent = new Intent(context,PortFolio_Input.class);
                 startActivity(intent);
                 return false;
@@ -45,6 +48,7 @@ public class Portfolio extends AppCompatActivity {
         car.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                GOAL = "Car";
                 Intent intent = new Intent(context,PortFolio_Input.class);
                 startActivity(intent);
                 return false;
@@ -54,6 +58,7 @@ public class Portfolio extends AppCompatActivity {
         money.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                GOAL = "Money";
                 Intent intent = new Intent(context,PortFolio_Input.class);
                 startActivity(intent);
                 return false;

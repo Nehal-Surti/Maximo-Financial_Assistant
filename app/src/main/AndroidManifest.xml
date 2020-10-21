@@ -55,6 +55,8 @@
         <activity android:name=".GoldBonds"/>
         <activity android:name=".Fix_Bonds"/>
         <activity android:name=".PortFolio_Input"/>
+        <activity android:name=".MutualFunds_Input"/>
+        <activity android:name=".Mutual_List"/>
         <activity android:name=".Portfolio_List"/>
         <meta-data
             android:name="preloaded_fonts"

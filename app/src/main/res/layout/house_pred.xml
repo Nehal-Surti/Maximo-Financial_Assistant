@@ -200,16 +200,16 @@
             android:textColor="#000000"
             android:textSize="30dp"/>
 
-        <TextView
-            android:id="@+id/approx"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Approx 4.2 Cr"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="16dp"
-            />
+<!--        <TextView-->
+<!--            android:id="@+id/approx"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Approx 4.2 Cr"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="16dp"-->
+<!--            />-->
     </LinearLayout>
 </LinearLayout>

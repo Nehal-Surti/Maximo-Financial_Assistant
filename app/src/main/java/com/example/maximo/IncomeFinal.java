@@ -39,7 +39,7 @@ public class IncomeFinal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 double tax_amount = calulateTax();
-                if(taxable < 500000)
+                if(IncomeTax.net_salary < 500000)
                 {
                     if(tax_amount > 12500)
                     {

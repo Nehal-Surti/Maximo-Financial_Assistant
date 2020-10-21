@@ -1,6 +1,7 @@
 package com.example.maximo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,34 +49,58 @@ public class PortFolio_Adapter extends RecyclerView.Adapter<PortFolio_Adapter.My
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.portName.setText("");
         holder.portDesc.setText(ports.get(position));
         if(ports.get(position).contains("Gold"))
         {
-            holder.linearLayout.setBackgroundResource(R.drawable.gold_layer);
+            holder.portName.setText("Gold Investment");
+            holder.portExplore.setText("Explore Gold Sector");
         }
         if(ports.get(position).contains("Bonds"))
         {
-            holder.linearLayout.setBackgroundResource(R.drawable.bond_layer);
+            holder.portName.setText("Bonds Investment");
+            holder.portExplore.setText("Explore Bonds Sector");
         }
         if(ports.get(position).contains("Fixed"))
         {
-            holder.linearLayout.setBackgroundResource(R.drawable.fd_layer);
+            holder.portName.setText("Fixed Deposits");
+            holder.portExplore.setVisibility(View.INVISIBLE);
         }
         if(ports.get(position).contains("stocks"))
         {
-            holder.linearLayout.setBackgroundResource(R.drawable.stock_layer);
+            holder.portName.setText("Stocks Investment");
+            holder.portExplore.setText("Explore Stocks Sector");
         }
         if(ports.get(position).contains("Mutual"))
         {
-            holder.linearLayout.setBackgroundResource(R.drawable.mutual_layer);
+            holder.portName.setText("Mutual Funds Investment");
+            holder.portExplore.setText("Explore Mutual Funds ");
         }
         holder.portExplore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(ports.get(position).contains("Gold"))
+                {
+                    Intent intent = new Intent(context,Gold.class);
+                    context.startActivity(intent);
+                }
+                if(ports.get(position).contains("Bonds"))
+                {
+                    Intent intent = new Intent(context,Bonds.class);
+                    context.startActivity(intent);
+                }
+                if(ports.get(position).contains("stocks"))
+                {
+                    Intent intent = new Intent(context,Stock_Predict_Input.class);
+                    context.startActivity(intent);
+                }
+                if(ports.get(position).contains("Mutual"))
+                {
+                    Intent intent = new Intent(context,Stock_Predict_Input.class);
+                    context.startActivity(intent);
+                }
             }
         });
     }

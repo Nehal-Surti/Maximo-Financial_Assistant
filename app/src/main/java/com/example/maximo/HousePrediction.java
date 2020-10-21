@@ -61,7 +61,7 @@ public class HousePrediction extends AppCompatActivity {
         flat = findViewById(R.id.flat);
         valuation = findViewById(R.id.valuation);
         price_each = findViewById(R.id.price_each);
-        approx = findViewById(R.id.approx);
+//        approx = findViewById(R.id.approx);
         progressDialog = new SpotsDialog(context,R.style.Custom);
         Intent intent = getIntent();
         bundle = intent.getBundleExtra("house");
@@ -116,14 +116,14 @@ public class HousePrediction extends AppCompatActivity {
                                                 {
                                                     int temp = Integer.parseInt(answer);
                                                     temp = temp/10000000;
-                                                    approx.setText("Approximately " + String.valueOf(temp) + " Crores");
+//                                                    approx.setText("Approximately " + String.valueOf(temp) + " Crores");
                                                     prediction.setVisibility(View.VISIBLE);
                                                     progressDialog.dismiss();
                                                 }
                                                 else{
                                                     int temp = Integer.parseInt(answer);
                                                     temp = temp/100000;
-                                                    approx.setText("Approximately " + String.valueOf(temp) + " Crores");
+//                                                    approx.setText("Approximately " + String.valueOf(temp) + " Crores");
                                                     prediction.setVisibility(View.VISIBLE);
                                                     progressDialog.dismiss();
                                                 }

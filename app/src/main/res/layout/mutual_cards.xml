@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">​
+    <LinearLayout
+        android:id="@+id/cell_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/bank_logo"
+                android:layout_width="113dp"
+                android:layout_height="75dp"
+                android:scaleType="fitCenter"
+                android:padding="4dp"
+                android:src="@drawable/growth" />
+
+            <TextView
+                android:id="@+id/fund_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/bank_logo"
+                android:text="***Bank Name***"
+                android:textSize="20sp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/fund_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fund_Name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:layout_toRightOf="@id/bank_logo"
+                android:text="Ratings: 3/5"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bank_logo">
+                <View
+                    android:layout_width="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="88dp"
+                    android:paddingRight="88dp"
+                    android:background="@color/colorPrimaryDark" />
+                <TableLayout
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content">
+                    <View
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TableRow
+                        android:gravity="center"
+                        android:layout_width="350dp"
+                        android:layout_height="20dp">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_width="350dp"
+                            android:layout_height="20dp">
+                            <TextView
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_width="50dp"
+                                android:textAlignment="center"
+                                android:text="Years"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:layout_height="20dp"
+                                android:layout_width="50dp"
+                                android:text="Rate"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:layout_height="20dp"
+                                android:layout_width="100dp"
+                                android:text="Returns"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                        </LinearLayout>
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TableRow
+                        android:gravity="center"
+                        android:layout_width="350dp"
+                        android:layout_height="20dp">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_width="350dp"
+                            android:layout_height="20dp">
+                            <TextView
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_width="50dp"
+                                android:textAlignment="center"
+                                android:text="1"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/rate_1"
+                                android:layout_height="20dp"
+                                android:layout_width="50dp"
+                                android:text="Rate"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/return_1"
+                                android:layout_height="20dp"
+                                android:layout_width="100dp"
+                                android:text="Returns"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                        </LinearLayout>
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TableRow
+                        android:gravity="center"
+                        android:layout_width="350dp"
+                        android:layout_height="20dp">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_width="350dp"
+                            android:layout_height="20dp">
+                            <TextView
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_width="50dp"
+                                android:textAlignment="center"
+                                android:text="3"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/rate_3"
+                                android:layout_height="20dp"
+                                android:layout_width="50dp"
+                                android:text="Rate"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/return_3"
+                                android:layout_height="20dp"
+                                android:layout_width="100dp"
+                                android:text="Returns"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                        </LinearLayout>
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TableRow
+                        android:gravity="center"
+                        android:layout_width="350dp"
+                        android:layout_height="20dp">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_width="350dp"
+                            android:layout_height="20dp">
+                            <TextView
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_width="50dp"
+                                android:textAlignment="center"
+                                android:text="5"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/rate_5"
+                                android:layout_height="20dp"
+                                android:layout_width="50dp"
+                                android:text="Rate"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/return_5"
+                                android:layout_height="20dp"
+                                android:layout_width="100dp"
+                                android:text="Returns"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                        </LinearLayout>
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/colorPrimaryDark"/>
+                    <TableRow
+                        android:gravity="center"
+                        android:layout_width="350dp"
+                        android:layout_height="20dp">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_width="350dp"
+                            android:layout_height="20dp">
+                            <TextView
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_width="50dp"
+                                android:textAlignment="center"
+                                android:text="10"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/rate_10"
+                                android:layout_height="20dp"
+                                android:layout_width="50dp"
+                                android:text="Rate"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_marginLeft="18dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark" />
+                            <TextView
+                                android:id="@+id/return_10"
+                                android:layout_height="20dp"
+                                android:layout_width="100dp"
+                                android:text="Returns"
+                                android:textAlignment="center"
+                                android:textSize="16dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                        </LinearLayout>
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/colorPrimaryDark"/>
+                </TableLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="88dp"
+                    android:paddingRight="88dp"
+                    android:background="@color/colorPrimaryDark" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

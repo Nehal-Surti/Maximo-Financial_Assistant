@@ -64,19 +64,19 @@ def index(request,tenure,goal_amount,salary,annual_investment,rd_rate,risk_toler
     data = dict()
     fd = list()
     for i in range(len(division)):
-        if i==0 and division[i]!='0.0':
+        if i==0 and division[i]!=0.0:
             fd.append(" Invest " + str(division[i]) + " in Fixed Deposits for " + str(tenure) + " years.")
             # data["Fixed Deposits"] = fd
-        if i==3 and division[i]!='0.0':
+        if i==3 and division[i]!=0.0:
             fd.append(GoldInvestment(division[i],tenure))
             # data["Gold"] = GoldInvestment(division[i],tenure)
-        if i==1 and division[i]!='0.0':
+        if i==1 and division[i]!=0.0:
             fd.append(Bonds(tenure,division[i],risk_tolerance))
             # data["Bonds"] = Bonds(tenure,division[i],risk_tolerance)
-        if i==2 and division[i]!='0.0':
+        if i==2 and division[i]!=0.0:
             fd.append(MutualFunds(tenure,division[i],risk_tolerance))
             # data["Mutual"] = MutualFunds(tenure,division[i],risk_tolerance)
-        if i==4 and division[i]!='0.0':
+        if i==4 and division[i]!=0.0:
             fd.append(Stocks(division[i],tenure))
             # data["Stocks"] = Stocks(division[i],tenure)
     data["Answer"] = fd
@@ -142,7 +142,11 @@ def MutualFunds(tenure,amount,risk):
     best_rate = df.iloc[0][rate_col]
     maturity_amount = maturityCalculator(amount, best_rate, tenure)
     after_tax_gains = (maturity_amount - amount) * 0.8
-    temp = " Invest " + str(amount) + " in Mutual Funds of " + str(df.iloc[0].to_numpy()[0]) +" at rate of " +str(best_rate) + " for " + str(tenure) + " years and get return "
+    if choice[0]=="equity-multi-cap_3_more" or choice[0]=="debt-low-duration_combined":
+        name = choice[0]
+    else:
+        name = str(df.iloc[0]["Fund Name"])
+    temp = " Invest " + str(amount) + " in Mutual Funds of " + name +" at rate of " +str(best_rate) + " for " + str(tenure) + " years and get return "
     temp = temp + str(amount+after_tax_gains) + "."
     data.append(temp)
     return temp
@@ -204,7 +208,7 @@ def Stocks(invest,tenure):
     data = list()
     temp = ""
     for i in range(5):
-        if number[i] != '0.0':
+        if number[i] != 0.0:
             temp = temp + " Invest " + str(current_price[i]) + " in " + str(number[i]) + " stocks of " + str(stock_list[i]).upper() + " for " + str(tenure) + " years."
     temp = temp + " Get a return of total of " + str(return_value)
     data.append(temp)
@@ -217,19 +221,19 @@ def Bonds(tenure,amount,risk):
     for i in range(5):
         if i==0:
             temp2 = get_GSec(tenure,amount,15)
-            temp = '\n'.join([temp, temp2])
+            temp = '\n\n'.join([temp, temp2])
         if i==1:
             temp2 = get_TaxFree(tenure,amount)
-            temp = '\n'.join([temp, temp2])
+            temp = '\n\n'.join([temp, temp2])
         if i==2:
             temp2 = calc_coupon_and_maturity_rbi(amount,15)
-            temp = '\n'.join([temp, temp2])
+            temp = '\n\n'.join([temp, temp2])
         if i==3:
             temp2 = calc_coupon_and_maturity_gold(tenure,amount,15,6,2.75)
-            temp = '\n'.join([temp, temp2])
+            temp = '\n\n'.join([temp, temp2])
         if i==4:
             temp2 = get_CorpBonds(risk,tenure,amount)
-            temp = '\n'.join([temp, temp2])
+            temp = '\n\n'.join([temp, temp2])
     data.append(temp)
     return temp
 
@@ -433,8 +437,8 @@ def GoldInvestment(amount,tenure):
         f = (today[i + 1] * w) / 10
         gold = gold + f
         temp2 = "Buy " + str(round(w,2)) + " grams of 24 carat Gold for " + str(amount) + " in " + str(start+i) + " and it will cost " + str(round(f,4)) + " after one year."
-        temp = '\n'.join([temp, temp2])
+        temp = '\n\n'.join([temp, temp2])
     temp2 = "You will be able to collect " + str(gold) + " after investing in gold sector for " + str(tenure) + "years."
-    temp = '\n'.join([temp, temp2])
+    temp = '\n\n'.join([temp, temp2])
     data.append(temp)
     return temp
