@@ -97,7 +97,7 @@ public class PortFolio_Input extends AppCompatActivity {
 //                risk = Integer.parseInt(String.valueOf(ratingBar.getRating()));
                 progressDialog.show();
                 RequestQueue queue = Volley.newRequestQueue(context);
-                String url = "http://192.168.0.6:8000/Portfolio/" + tenure + "/" + goal_amount + "/" + annual_salary + "/" + annual_investment + "/" + 7 + "/" + risk;
+                String url = "http://192.168.0.5:8000/Portfolio/" + tenure + "/" + goal_amount + "/" + annual_salary + "/" + annual_investment + "/" + 7 + "/" + risk;
                 Log.d("Port",url);
                 JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {

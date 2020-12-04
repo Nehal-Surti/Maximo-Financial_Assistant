@@ -64,7 +64,7 @@ public class Tax_Free extends AppCompatActivity {
                 }
                 progressDialog.show();
                 RequestQueue queue = Volley.newRequestQueue(context);
-                String url = "http://192.168.0.6:8000/Bonds/" + 1 + "/";
+                String url = "http://192.168.0.5:8000/Bonds/" + 1 + "/";
                 JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
                             @Override

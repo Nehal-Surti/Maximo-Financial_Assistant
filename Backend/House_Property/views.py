@@ -46,7 +46,7 @@ def prediction(request,location,time_t,sqft,today):
     date = datetime.strptime(time_t, '%Y-%m-%d')
     temp = (datetime.today() - date).days / 365
     investYear = round(temp, 1)
-    X1 = ef.drop(columns=['Churchgate', 'Dadar', 'Chembur', 'Date'])
+    X1 = ef.drop(columns=['Churchgate', 'Dadar', 'Chembur', 'Date','Years'])
     Y1 = ef[location]
     c = open(os.path.join(workpath, 'Backend\\templates\\dataset\\Inflation.csv'))
     reader = csv.reader(c)
@@ -57,13 +57,13 @@ def prediction(request,location,time_t,sqft,today):
             inflation = row[1]
     polynomial_features = PolynomialFeatures(degree=2)
     x_poly = polynomial_features.fit_transform(X1)
-    x_poly_test = polynomial_features.fit_transform(np.array([inf, investYear]).reshape(1, -1))
+    x_poly_test = polynomial_features.fit_transform(np.array([inf]).reshape(1, -1))
     model = LinearRegression()
     model.fit(x_poly, Y1)
     poly_pred = model.predict(x_poly_test)
-    future = pow(1+float(inflation),investYear)
-    future = today*future
-    final = round(0.4 * forecast + 0.3 * poly_pred[0] + 0.3 * future,4)
+    # future = pow(1+float(inflation),investYear)
+    # future = today*future
+    final = round(0.2 * forecast + 0.8 * poly_pred[0],4)
     data = dict()
     data['Answer'] = str(int(final*sqft))
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")

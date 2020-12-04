@@ -145,7 +145,7 @@ public class HouseFilter extends AppCompatActivity{
                 if (!param_location.isEmpty()) {
                     progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.6:8000/House_Property/" + param_BHK + "/" + param_location + "/" + param_price + "/";
+                    String url = "http://192.168.0.5:8000/House_Property/" + param_BHK + "/" + param_location + "/" + param_price + "/";
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
                                 @Override

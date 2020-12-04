@@ -132,6 +132,7 @@
             android:layout_width="261dp"
             android:layout_height="50dp"
             android:ems="10"
+            android:paddingTop="5dp"
             android:layout_marginLeft="80dp"
             android:inputType="numberDecimal"
             android:layout_below="@id/funds"
@@ -144,6 +145,7 @@
             android:layout_width="261dp"
             android:layout_height="50dp"
             android:ems="10"
+            android:paddingTop="5dp"
             android:background="@drawable/border_button"
             android:inputType="numberDecimal"
             android:layout_below="@id/time"
@@ -151,6 +153,7 @@
             android:gravity="center_horizontal" />
 
         <EditText
+            android:paddingTop="5dp"
             android:id="@+id/sal_input"
             android:layout_width="256dp"
             android:layout_height="50dp"
@@ -176,6 +179,7 @@
             android:gravity="center_horizontal" />
 
         <EditText
+            android:paddingTop="5dp"
             android:textAlignment="center"
             android:id="@+id/sav_input"
             android:layout_width="256dp"

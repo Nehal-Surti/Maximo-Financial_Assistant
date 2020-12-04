@@ -98,7 +98,7 @@ public class PortFolio_Adapter extends RecyclerView.Adapter<PortFolio_Adapter.My
                 }
                 if(ports.get(position).contains("Mutual"))
                 {
-                    Intent intent = new Intent(context,Stock_Predict_Input.class);
+                    Intent intent = new Intent(context,MutualFunds_Input.class);
                     context.startActivity(intent);
                 }
             }

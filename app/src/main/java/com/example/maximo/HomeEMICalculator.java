@@ -87,7 +87,7 @@ public class HomeEMICalculator extends AppCompatActivity {
                     amount = (amount*ltv)/100;
                     amount = amount+ Integer.parseInt(fee);
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.6:8000/Loans/" + amount + "/" + String.valueOf(roi) + "/" + year*12 + "/";
+                    String url = "http://192.168.0.5:8000/Loans/" + amount + "/" + String.valueOf(roi) + "/" + year*12 + "/";
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
                                 @Override
@@ -120,7 +120,7 @@ public class HomeEMICalculator extends AppCompatActivity {
                         public void onClick(View v) {
                             progressDialog.show();
                             RequestQueue queue = Volley.newRequestQueue(context);
-                            String url = "http://192.168.0.6:8000/Loans/" + amount + "/" + Float.parseFloat(String.valueOf(emi)) + "/" + Float.parseFloat(String.valueOf(roi)) + "/" + year*12 + "/";
+                            String url = "http://192.168.0.5:8000/Loans/" + amount + "/" + Float.parseFloat(String.valueOf(emi)) + "/" + Float.parseFloat(String.valueOf(roi)) + "/" + year*12 + "/";
                             JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                                     new Response.Listener<JSONObject>() {
                                         @Override
@@ -163,7 +163,7 @@ public class HomeEMICalculator extends AppCompatActivity {
     {
         final String[] temp = new String[1];
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "http://192.168.0.6:8000/Loans/" + amount + "/" + String.valueOf(rate) + "/" + period + "/";
+        String url = "http://192.168.0.5:8000/Loans/" + amount + "/" + String.valueOf(rate) + "/" + period + "/";
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

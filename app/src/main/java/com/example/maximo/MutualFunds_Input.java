@@ -62,7 +62,7 @@ public class MutualFunds_Input extends AppCompatActivity {
                 {
                     progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.6:8000/MutualFunds/"+Integer.parseInt(amount)+"/"+2+"/";
+                    String url = "http://192.168.0.5:8000/MutualFunds/"+Integer.parseInt(amount)+"/"+2+"/"+1+"/";
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
                                 @Override
@@ -117,7 +117,7 @@ public class MutualFunds_Input extends AppCompatActivity {
                 {
                     progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.6:8000/MutualFunds/"+Integer.parseInt(amount)+"/"+risk+"/";
+                    String url = "http://192.168.0.5:8000/MutualFunds/"+Integer.parseInt(amount)+"/"+risk+"/";
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
                                 @Override
@@ -163,7 +163,7 @@ public class MutualFunds_Input extends AppCompatActivity {
         taxmf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                amount = taxmf.getText().toString();
+                amount = tax_input.getText().toString();
                 if(amount.isEmpty())
                 {
                     Toast.makeText(context," Enter amount ", Toast.LENGTH_LONG).show();
@@ -172,7 +172,7 @@ public class MutualFunds_Input extends AppCompatActivity {
                 {
                     progressDialog.show();
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://192.168.0.6:8000/MutualFunds/"+Integer.parseInt(amount)+"/"+1+"/";
+                    String url = "http://192.168.0.5:8000/MutualFunds/"+Integer.parseInt(amount)+"/"+1+"/"+1+"/";
                     JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                             new Response.Listener<JSONObject>() {
                                 @Override

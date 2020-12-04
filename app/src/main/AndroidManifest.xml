@@ -10,14 +10,17 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".StartActivity" android:theme="@style/Theme.Intro">
+        </activity>
         <activity android:name=".Portfolio">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".Tax_Free_List"/>
         <activity android:name=".Tax_Free">
@@ -58,6 +61,7 @@
         <activity android:name=".MutualFunds_Input"/>
         <activity android:name=".Mutual_List"/>
         <activity android:name=".Portfolio_List"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

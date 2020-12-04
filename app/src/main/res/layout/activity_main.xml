@@ -15,21 +15,22 @@
         android:layout_height="100dp"
         android:src="@drawable/main"/>
     <LinearLayout
-        android:background="@color/white"
+        android:background="@drawable/money_layer"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="150dp">
 
         <Button
             android:id="@+id/portfolio"
-            android:layout_marginLeft="20dp"
             android:layout_width="150dp"
-            android:text="Portfolio Creation"
-            android:textSize="25dp"
-            android:background="@drawable/portfolio_layer"
+            android:layout_height="130dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_height="130dp"/>
+            android:background="@drawable/gradient_box"
+            android:fontFamily="@font/courgette"
+            android:text="Portfolio Creation"
+            android:textSize="25dp" />
 
         <View
             android:layout_marginLeft="10dp"
@@ -45,14 +46,15 @@
             android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="Loans"
+            android:fontFamily="@font/courgette"
             android:textSize="30dp"
-            android:background="@drawable/loan_layer"
+            android:background="@drawable/gradient_box"
             android:layout_gravity="center"
             android:layout_height="130dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:background="@color/white"
+        android:background="@drawable/money_layer"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -62,10 +64,11 @@
             android:id="@+id/bonds"
             android:layout_marginLeft="20dp"
             android:layout_width="150dp"
-            android:background="@drawable/bond_layer"
+            android:background="@drawable/gradient_box"
             android:layout_gravity="center"
             android:textSize="30dp"
             android:text="BONDS INVEST"
+            android:fontFamily="@font/courgette"
             android:layout_marginRight="20dp"
             android:layout_height="130dp"/>
 
@@ -84,13 +87,15 @@
             android:layout_width="150dp"
             android:textSize="30dp"
             android:text="STOCKS INVEST"
-            android:background="@drawable/stock_layer"
+            android:fontFamily="@font/courgette"
+            android:background="@drawable/gradient_box"
             android:layout_gravity="center"
             android:layout_height="130dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/money_layer"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="150dp">
@@ -101,7 +106,8 @@
             android:layout_width="150dp"
             android:text="GOLD Invest"
             android:textSize="30dp"
-            android:background="@drawable/gold_layer"
+            android:fontFamily="@font/courgette"
+            android:background="@drawable/gradient_box"
             android:layout_gravity="center"
             android:layout_marginRight="20dp"
             android:layout_height="130dp"/>
@@ -120,14 +126,16 @@
             android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="House Property"
+            android:fontFamily="@font/courgette"
             android:textSize="28dp"
-            android:background="@drawable/house_layer"
+            android:background="@drawable/gradient_box"
             android:layout_gravity="center"
             android:layout_height="130dp"/>
 
     </LinearLayout>
     <LinearLayout
-        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/money_layer"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="150dp">
@@ -138,7 +146,8 @@
             android:layout_width="150dp"
             android:text="MUTUAL FUNDS"
             android:textSize="30dp"
-            android:background="@drawable/mutual_layer"
+            android:fontFamily="@font/courgette"
+            android:background="@drawable/gradient_box"
             android:layout_gravity="center"
             android:layout_marginRight="20dp"
             android:layout_height="130dp"/>
@@ -157,8 +166,9 @@
             android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:text="Income Tax"
+            android:fontFamily="@font/courgette"
             android:textSize="28dp"
-            android:background="@drawable/tax_layer"
+            android:background="@drawable/gradient_box"
             android:layout_gravity="center"
             android:layout_height="130dp"/>
 

@@ -41,32 +41,30 @@ def prediction(request,weight,time_t,today):
     Y = []
     inflation = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\Inflation.csv'))
     usd = pd.read_csv(os.path.join(workpath, 'Backend\\templates\\dataset\\USD.csv'))
-    for i in X:
-      b_date = datetime.strptime(i, '%Y-%m-%d')
-      temp = (datetime.today() - b_date).days/365
-      Y.append(round(temp,1))
-    # time_t = pd.to_datetime(time_t)
-    date = datetime.strptime(time_t, '%Y-%m-%d')
-    temp = (datetime.today() - date).days / 365
-    investYear = round(temp, 1)
-    ef['Years'] = Y
+    # for i in X:
+    #   b_date = datetime.strptime(i, '%Y-%m-%d')
+    #   temp = (datetime.today() - b_date).days/365
+    #   Y.append(round(temp,1))
+    # # time_t = pd.to_datetime(time_t)
+    # date = datetime.strptime(time_t, '%Y-%m-%d')
+    # temp = (datetime.today() - date).days / 365
+    # investYear = round(temp, 1)
+    # ef['Years'] = Y
     X1 = ef.drop(columns=['Price','Date'])
     Y1 = ef[s]
     inf = inflation[inflation['Year'] == year]['inflation forecast'].to_numpy()[0]
     dollar = usd[usd['Date'] == time_t]['USD'].to_numpy()[0]
     polynomial_features= PolynomialFeatures(degree=2)
     x_poly = polynomial_features.fit_transform(X1)
-    x_poly_test = polynomial_features.fit_transform(np.array([inf,dollar,investYear]).reshape(1,-1))
+    x_poly_test = polynomial_features.fit_transform(np.array([inf,dollar]).reshape(1,-1))
     model = LinearRegression()
     model.fit(x_poly, Y1)
     poly_pred = model.predict(x_poly_test)
-
-    future = pow(1 + float(inf), investYear)
-    future = today * future
-    final = round(0.4 * forecast + 0.3 * poly_pred[0] + 0.3 * future, 4)
+    poly_pred[0] = (poly_pred[0] * 10) / 31.1034768
+    final = round(0.2 * forecast + 0.9 * poly_pred[0], 4)
     data = dict()
     if weight<10:
-        data['Answer'] = str(int(final * weight))
+        data['Answer'] = str(int(final * weight)/10)
     else:
         data['Answer'] = str(int(final*(weight/10)))
     result = HttpResponse(json.dumps(data, ensure_ascii=False), content_type="application/json")

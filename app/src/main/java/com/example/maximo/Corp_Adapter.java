@@ -82,7 +82,7 @@ public class Corp_Adapter extends RecyclerView.Adapter<Corp_Adapter.MyViewHolder
 //        Log.d("Corp",String.valueOf(Corp_Bonds.year));
 //        double amount = Math.pow(x,Double.parseDouble(String.valueOf(Corp_Bonds.year)));
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "http://192.168.0.6:8000/Bonds/" + Corp_Bonds.invest + "/" + bonds.get(position).getCoupon() + "/" + Corp_Bonds.year + "/";
+        String url = "http://192.168.0.5:8000/Bonds/" + Corp_Bonds.invest + "/" + bonds.get(position).getCoupon() + "/" + Corp_Bonds.year + "/";
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

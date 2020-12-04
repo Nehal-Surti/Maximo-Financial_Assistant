@@ -64,7 +64,7 @@ public class Bonds extends AppCompatActivity {
     {
         coupons.clear();
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "http://192.168.0.6:8000/Bonds/" + amount + "/" + String.valueOf(rate) + "/" + period + "/" + frequency + "/"+ num+"/";
+        String url = "http://192.168.0.5:8000/Bonds/" + amount + "/" + String.valueOf(rate) + "/" + period + "/" + frequency + "/"+ num+"/";
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
